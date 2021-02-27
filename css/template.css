@@ -33,6 +33,12 @@
 .navbar a:hover, .dropbtn {
     background-color: #555;
 }
+html, body {
+    max-width: 100%;
+    resize: none;
+    overflow-x: hidden;
+    height: 100%;
+}
 .dropbtn{
     width: 100%;
 }
@@ -45,7 +51,9 @@
     z-index: 1;
     width: 100%;
 }
-.row.content {height: 450px}
+.row.content {
+    height: 900px;
+}
 .dropdown-content a {
     float: none;
     color:white;
@@ -57,7 +65,10 @@
 .dropdown-content a:hover {
     background-color: #555;
 }
-
+footer{
+    background-color: grey;
+    height:50px;
+}
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -66,3 +77,11 @@
     background-color: #f1f1f1;
     height: 100%;
 }
+@media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+}
+  
