@@ -15,6 +15,15 @@
     padding: 14px 16px;
     text-decoration: none;
 }
+.caption, .caption a{
+    text-align:center;
+    color: grey;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .dropdown {
     float: center;
 }
@@ -30,6 +39,9 @@
     font-family: inherit; 
     margin: 0; 
 }
+img { 
+    border:1px solid grey;
+ }
 .navbar a:hover, .dropbtn {
     background-color: #555;
 }
@@ -52,7 +64,10 @@ html, body {
     width: 100%;
 }
 .row.content {
-    height: 900px;
+    height: 1800px;
+}
+p{
+    font-size: 17px;
 }
 .dropdown-content a {
     float: none;
