@@ -6,6 +6,10 @@
 }
 .page-header{
     text-align:center;
+    border-bottom: 0 none;
+}    
+p {
+    line-height: 1.75 ;
 }
 .navbar a {
     float: left;
@@ -39,6 +43,9 @@
     font-family: inherit; 
     margin: 0; 
 }
+.indented{
+    margin-left:5%;
+}
 img { 
     border:1px solid grey;
  }
@@ -50,6 +57,10 @@ html, body {
     resize: none;
     overflow-x: hidden;
     height: 100%;
+}
+.column {
+    padding-bottom: 20000px;
+    margin-bottom: -20000px;
 }
 .dropbtn{
     width: 100%;
@@ -63,8 +74,23 @@ html, body {
     z-index: 1;
     width: 100%;
 }
+dt{
+    font-size: 20px;
+}
+li, dd{
+    font-size: 16.5px;
+}
+.footertext{
+    top: 50%;
+    margin: 0;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.footertext a{
+    color:black;
+}
 .row.content {
-    height: 1800px;
+    overflow: hidden;
 }
 p{
     font-size: 17px;
@@ -80,9 +106,13 @@ p{
 .dropdown-content a:hover {
     background-color: #555;
 }
+.filler{
+    height: 25px;
+    background-color: #f1f1f1;
+}
 footer{
-    background-color: grey;
-    height:50px;
+    background-color: #f1f1f1;
+    height:25px;
 }
 .dropdown:hover .dropdown-content {
     display: block;
@@ -90,7 +120,6 @@ footer{
 .sidenav{
     padding-top: 20px;
     background-color: #f1f1f1;
-    height: 100%;
 }
 @media screen and (max-width: 767px) {
     .sidenav {

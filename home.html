@@ -11,7 +11,7 @@
     <link rel="icon" href="images/favicon.ico">
   </head>
   <body>
-    <h1 class = "page-header">Data Structures 101</h1>
+    <h1 class = "page-header"><b>Data Structures 101</b></h1>
     <div class = "row"> 
         <div class="navbar">
             <a class = "col-md-3" href="home.html">Home</a>
@@ -41,44 +41,70 @@
         </div>
     </div>
     <div class="container-fluid text-center">    
+      <div class = "row filler"></div>
       <div class="row content">
-        <div class="col-sm-2 sidenav"></div>
-        <div class="col-sm-8 text-left"> 
-          <h1>What are Data Structures?</h1>
+        <div class="col-sm-2 column sidenav"></div>
+        <div class="col-sm-8 column text-left"> 
+          <h1 class><b><u>What are Data Structures?</u></b></h1>
           <br>
           <div>
-            <img class= "center" src = "images/array.png"></img>
-            <div class = "caption">Array, one of the most basic data structures</div>
+            <img class= "center" src = "images/array1.png"></img>
+            <div class = "caption">An Array, a basic data structure, storing a group of integer values</div>
           </div>
           <br>
-          <p>Data structures are specific formats used to efficiently store data that allow for various operations to be performed on said data. Each data structure functions differently from the rest and comes with its own advantages and disadvantages. 
-          As a result, some data structures are more suited for specific tasks than others. It is up to the programmer to accurately discern which one is most appropriate for their needs.</p>
+          <p>Data structures are specific formats used to efficiently store data that allow for various operations to be performed on said data. Some examples of commonly used data structures include arrays, linked lists, stacks, and queues. 
+          Each data structure functions differently from the rest and comes with its own advantages and disadvantages. As a result, some data structures are more suited for specific tasks than others. It is up to the programmer to accurately discern which one is most appropriate for their needs.</p>
           <hr>
-          <h1>Why are they Important?</h1>
+          <h1><b><u>Why are they Important?</u></b></h1>
           <br>
-          <p>The ability to choose the most suitable data structure for a project is essential to becoming a quality software developer. Data structures are the building blocks of a program, and choosing the wrong ones will lead to said program running extremely inefficiently. Let's say, for example, you have a collection of integer values 
-          and you wish to find the location of a specific one. If you store that data in an array, you would need go through it blindly one value at a time until you find your target. In the worst case scenario, you may have to check every value in the array before you succeed.</p>
+          <p>The ability to choose the most suitable data structure for a task is essential to becoming a quality software developer. Data structures are the building blocks of a program, and choosing the wrong ones will cause said program to run extremely inefficiently. Let's say, for example, you have a collection of unordered integer values 
+          and you wish to find the location of a specific one. If you store that data in an array, you would need go through it blindly, one value at a time, until you find your target. In the worst scenario, you may have to check every value in the array before you succeed.
+          This is highly inefficient and can take a very long time if you were working with a large amount of elements. However, if you store your data in a structure that's suitable for performing searches, such
+          as a binary search tree, far fewer elements will need to be checked before you find the target. Consequently, it will take less time to complete the search, making your program run much faster.</p>
           <br>
-          <div>
-            <img class= "center" src = "images/arraysearch.png"></img>
-            <div class = "caption">Array performing a search.</div>
+          <div class = "row">
+            <span class = "col-sm-6">
+              <img class= "center" src = "images/arraysearch.png"></img>
+              <div class = "caption">An Array performing a search.</div>
+            </span>
+            <span>
+              <img class= "center" src = "images/bstsearch.gif"></img>
+              <div class = "caption">A Binary Search Tree performing a search.</div>
+            </span> 
           </div>
+          <br>
+          <p>A firm grasp on the qualities of data structures is essential in creating highly optimized code. As such, recruiters for tech companies will always test candidates on their knowledge in this subject. No matter which field of computer science you wish to pursue, data structures are a fundamental aspect of 
+          programming that cannot be ignored.</p>
           <hr>
-          <h1>The Big 4</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h1><b><u>The Big 4</u></b></h1>
+          <br>
+          <p>The advantages and disadvantages of a data structure can be determined by its ability to perform 4 basic functions: </p> 
+          <br>
+          <ul>
+            <li><u><b>Access</b></u>: Given the position of an element within the structure, return that element.</li>
+            <br>
+            <li><u><b>Search</b></u>: Find a target element within the structure and return its location. If the element cannot be found, return a value that reflects this (usually -1).</li>
+            <br>
+            <li><u><b>Insert</b></u>: Add an element to the structure at a given location within it.</li>
+            <br>
+            <li><u><b>Delete</b></u>: Remove an existing element in the structure given its location.</li>
+          </ul>
+          <br> 
+          <p>We are interested the time complexities of these functions, or how their running times change as the structure's size increases. Will it take longer for these functions to run if the structure contains more data? If so, how much longer? The answers to these questions will reveal what tasks the data structure are suitable and unsuitable for.
+          </p>
+          <br>
         </div>
-        <div class="col-sm-2 sidenav"></div>
+        <div class="col-sm-2 column sidenav"></div>
       </div>
     </div>
-    <footer class="container-fluid text-center">
-      <span>Click </span>
-      <a href="#">here </a>
-      <span>to give feedback!</span>
+    <footer class="container-fluid">
+      <span class = "col-sm-2 text-center footertext">
+      </span>
+      <span class = "col-sm-8 text-center footertext">
+        <a href="#">Click Here to Give Feedback</a>
+      </span>
+      <span class = "col-sm-2 text-center footertext">
+      </span>
     </footer>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
