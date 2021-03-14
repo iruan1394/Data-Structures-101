@@ -48,24 +48,58 @@
           <h1><b><u>What is a Stack?</u></b></h1>
           <br>
           <p>A stack is a container in which elements are added and removed in a particular order. For a stack, this order is <b>LIFO</b>, or last in first out. The element that was last added to the stack
-          will be the first to be removed. In order to uphold this rule, stacks only allow for direct insertion and deletion at the top of the stack. When an element is added to the top of a stack, it is called 
-          <b>pushing</b>. When one is removed, it is called <b>popping</b></p> 
+          is said to be at the top and will be the first to be removed. Conversely, the element that was first added to the stack is said to be at the bottom and will be the last to be removed. In order to uphold this 
+          rule, stacks only allow for direct insertion, deletion, and access at the top. Adding an element to the top of the stack is called <b>push</b> while removing the top element is called <b>pop</b>.
+          </p> 
           <br>
           <div>
             <img class= "center" src = "images/stack1.png"></img>
             <div class = "caption">Stack perfoming push and pop</div>
           </div>
+          <br>
+          <p>A stack can be implemented using either an array or a list data structure. In the former case, the stack will have a limit to how many elements it can hold, but there will never be a situation where an element cannot be stored due to lack of memory space.
+          In the latter case, the stack will resize itself as elements are pushed and popped. However, this can lead to issues with memory usage if the stack grows too big. It is up to the programmer to decide which implementaion suits their needs best. 
+          </p>
           <hr>
           <h1><b><u>What are the Advantages of a Stack?</u></b></h1>
+          <br>
+          <h4>• <b><u>Fast End Insertion, Deletion, and Access</u></b></h4>
+          <p class = "indented">Stacks excel at adding, removing, and returning elements at its top. Pushing, popping, and accessing will always take the same amount of time no matter how many elements are stored. This is true regardless of whether 
+          the stack was implemented using an array or a linked list.
+          </p>
+          <br>
+          <h4>• <b><u>Fast Reversal</u></b></h4>
+          <p class = "indented">Because stacks follow the LIFO order, reversing the order of the elements within one is quite easy. Simply popping until the stack is empty will return the elements in the order of last added to first.
+          </p>
+          <br>
+          <div>
+            <img class= "center" src = "images/stack2.jpg"></img>
+            <div class = "caption">Reversing a string using a stack</div>
+          </div>
+          <br>
           <hr>
           <h1><b><u>What are the Disadvantages of a Stack?</u></b></h1>
-          
+          <br>
+          <h4>• <b><u>Cumbersome Insertion, Deletion, and Access Below the Top</u></b></h4>
+          <p class = "indented">A stack does not allow for direct inserting, deleting, or accessing of elements at anywhere besides its top. If it is absolutely necessary to do so, elements must be popped out until the target position becomes the new "top" of the stack. Once the desired function has been performed, the removed elements must then be pushed back in. This process is extremely inefficient and slow, so it is highly recommended to use alternative data structures to perform such tasks.
+          </p>
+          <br>
+          <div>
+            <img class= "center" src = "images/stack3.png"></img>
+            <div class = "caption">Deleting an element not at the top of a stack</div>
+          </div>
+          <br>
           <hr>
           <h1><b><u>Stack Applications</u></b></h1>
           <br>
-
+          <p>Stacks are great for applications where backtracking, or undoing the most recent action(s), is a desired function. They are also suitable to hold data that's meant to be reversed. Some examples of stack applications are: </p>
           <br>
-
+          <ul>
+            <li><u><b>Maze Solver</b></u>: In the process of solving a maze, a program will inevitably hit walls or dead ends. When such events occur, it is necessary to move back to a previous position or undo the most recent action. If the moves taken in the maze were stored in a stack, it would be quite simple to do so by popping the most recent ones. </li>
+            <br>
+            <li><u><b>Palindrome Test</b></u>: A palindrome is a sequence that reads the same even when reversed. For example, the word "racecar" is a palindrome because when reversed, the word is still "racecar". If we utilized a stack to store a sequence we wished to test, we can quickly get its reversed version to compare with the original. </li>
+            <br>
+          </ul>
           <br>
         </div>
         <div class="col-sm-2 column sidenav"></div>

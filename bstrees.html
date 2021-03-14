@@ -1,0 +1,166 @@
+<!doctype html>
+<!--Ivan Ruan-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Binary Search Tree</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="icon" href="images/favicon.ico">
+  </head>
+  <body>
+    <h1 class = "page-header"><b>Data Structures 101</b></h1>
+    <div class = "row"> 
+        <div class="navbar">
+            <a class = "col-md-3" href="home.html">Home</a>
+            <div class = "col-md-3 dropdown">
+              <button class="dropbtn">Overviews</button>
+              <div class = "dropdown-content">
+                <a href="arrays.html">Arrays</a>
+                <a href="linkedlists.html">Linked Lists</a>
+                <a href="stacks.html">Stacks</a>
+                <a href="queues.html">Queues</a>
+                <a href="hashtables.html">Hash Tables</a>
+                <a href="bstrees.html">Binary Search Trees</a>
+              </div>
+            </div>
+            <div class = "col-md-3 dropdown">
+              <button class="dropbtn">Efficiency Tests</button>
+              <div class = "dropdown-content">
+                <a href="arraytest.html">Arrays</a>
+                <a href="linkedtest.html">Linked Lists</a>
+                <a href="stacktest.html">Stacks</a>
+                <a href="queuetest.html">Queues</a>
+                <a href="hashtest.html">Hash Tables</a>
+                <a href="bstreetest.html">Binary Search Trees</a>
+              </div>
+          </div>
+            <a class = "col-md-3" href="quiz.html">Take a Quiz</a>
+        </div>
+    </div>
+    <div class="container-fluid text-center">    
+      <div class = "row filler"></div>
+      <div class="row content">
+        <div class="col-sm-2 column sidenav"></div>
+        <div class="col-sm-8 column text-left"> 
+          <h1><b><u>What is a Binary Search Tree?</u></b></h1>
+          <br>
+          <p>A binary search tree is part of a family of data structures known as <b>trees</b>. Trees, like linked lists, store data as a collection of containers called <b>nodes</b>. However, the nodes of a tree are completely different from those of a linked list.
+          Tree nodes are organized using parent-child relationships, where nodes points down to one or more other nodes. A node pointing down is known as a parent while the nodes it is pointing down to are its children. Nodes that share the same parent are known as <b>siblings</b>.
+          The <b>root</b> of a tree is the node located at its very top, thus it cannot have any parents. The <b>leaves</b> of a tree are the nodes that do not have any children. A <b>subtree</b> of a node is a tree made up of one of its children and all of that child's descendants.
+          The <b>height</b> of a tree is the distance from the root node to the bottom-most leaf node.</p>
+          <br>
+          <div>
+            <img class= "center" src = "images/bstree1.jpg"></img>
+            <div class = "caption">A basic tree with a height of 3</div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class = "row">
+            <span class = "col-sm-7">
+              <p>In order for a tree to be considered a binary search tree, several criteria must be met: </p>
+              <br>
+              <ul>
+                <li><b>A parent node can only have at most 2 children: a left child and a right child.</b></li>
+                <br>
+                <li><b>The left subtree of a node can only contain values less said node's.</b></li>
+                <br>
+                <li><b>The right subtree of a node can only contain values greater than said node's.</b></li>
+                <br>
+                <li><b>Any subtree within the tree must also be a binary search tree.</b></li>
+              </ul>
+            </span>
+            <span class = "col-sm-5">
+                <img class= "center" src = "images/bstree2.png"></img>
+                <div class = "caption">A binary search tree of integers (Wikipedia)</div>
+            </span> 
+          </div>
+          <br>
+          <p>A binary search tree can either be <b>balanced</b> or <b>unbalanced</b>. In a balanced binary search tree, the heights of the subtrees of any node must not differ by more than 1. This ensures that the overall height of the binary search tree is kept to a minimum, which allows for faster searching. In an unbalanced 
+          binary search tree, a node can have subtrees with wildly different heights. In the worse case scenario, each parent may only have 1 child node leading to a tree that essentially functions as a linked list. This is known as a <b>degenerate</b> tree and is highly undesirable.</p>
+          <br>
+          <div>
+            <img class= "center" src = "images/bstree3.png"></img>
+            <div class = "caption">Balanced binary search tree vs Degenerate binary search tree</div>
+          </div>
+          <hr>
+          <h1><b><u>What are the Advantages of a Binary Search Tree?</u></b></h1>
+          <br>
+          <h4>• <b><u>Efficient Search</u></b></h4>
+          <p class = "indented">Since the elements of a binary search tree are stored in a particular order, there is no need to blindy check each node until the target is found. Instead, we can navigate through the tree starting from the root by comparing the node we are currently on
+          to our target. If our target's value is equal to the current node's, we have found it. If it is less than, we move to the current node's left child. If it is greater than, we move to the right child. If a situation occurs where our current node does not exist, then the tree does not contain our target.
+          Even though this method is faster than blind checks, we may still need to go through many nodes if the tree is unbalanced or worse, degenerate. 
+          </p>
+          <div>
+            <img class= "center" src = "images/bstsearch.gif"></img>
+            <div class = "caption">Binary Search Tree performing a search</div>
+          </div>
+          <br>
+          <h4>• <b><u>Efficient Insertion and Deletion</u></b></h4>
+          <p class = "indented">When a node is inserted into a binary search tree, it will always be inserted as a child of an existing leaf. The only work that needs to be done is calculating which leaf the node should be inserted below
+          and altering that leaf to point to the inserted node. The former action is done by traversing the tree in the same manner used to perform searches. The speed at which this is done depends on the height of the tree and how unbalanced the tree is.
+          The latter action can be done instantly regardless of the tree's size or structure. All that needs to be done is altering the target leaf so that it points to the newly inserted node</p>
+          <br>
+          <p class = "indented">As for deletion, the actions needed to be taken depends on the its status of the target node. If it is a leaf, then all that needs to be done is altering its parent so that it no longer points to the target. If the target node is a parent
+            with a single child, then that child must replace it. If it is a parent with 2 children, then it must be replaced by the smallest node in its right subtree. The time needed to find this node depends on the height of the subtree and how unbalanced the subtree is. The actual replacement 
+            can be done instantly regardless of the tree's size and structure.</p>
+          <br>
+          <div class = "row">
+            <span class = "col-sm-6">
+              <div>
+                <img class= "center" src = "images/bstree4.gif"></img>
+                <div class = "caption">Binary Search Tree performing an insertion</div>
+              </div>
+            </span>
+            <span class = "col-sm-6">
+              <div>
+                <img class= "center" src = "images/bstree5.gif"></img>
+                <div class = "caption">Binary Search Tree deleting a node with 2 children</div>
+              </div>
+            </span> 
+          </div>
+          <hr>
+          <h1><b><u>What are the Disadvantages of a Binary Search Tree?</u></b></h1>
+          <br>
+          <h4>• <b><u>Balancing</u></b></h4>
+          <p class = "indented">A binary search tree must be balanced in order to attain optimal performance. However, even if a tree starts off as balanced, it may degenerate as nodes are added and removed. This problem can be avoided by using
+          a <b>self-balancing</b> binary search tree, which maintains its balanced property by rearranging the tree as nodes are added and removed. However, such rearrangements may take up a lot of time if there are many nodes within the tree.
+          Thus it is not recommended to use binary search trees to store large amounts of data. </p>
+          <br>
+          <h4>• <b><u>High Maintenance</u></b></h4>
+          <p class = "indented">When a binary search tree performs even basic functions such as insertion and deletion, many steps need to be taken to ensure that it still remains a binary search tree. As such, binary search trees require
+          more computational space to complete tasks than other data structures.
+          </p>
+          <br>
+          <br>
+          <hr>
+          <h1><b><u>Binary Search Tree Applications</u></b></h1>
+          <br>
+          <p>Binary search tree's are mainly used to keep a set of data sorted as elements are added and removed. They are also used when searching needs to be performed frequently. Some applications of a binary search tree include: </p>
+          <br>
+          <ul>
+            <li><u><b>Implementing Various Search Algorithms</b></u>: There are several ways to search for an item through a set of data, but the most efficient ones require the data be sorted in a particular order beforehand. After all, if the data is underordered,
+            the only possible method would be to blindly check each element. A binary search trees automatically sorts its contents as new nodes are added, making it an appropriate for showing how various searching algorithms work.</li>
+            <br>
+          </ul>
+          <br>
+        </div>
+        <div class="col-sm-2 column sidenav"></div>
+      </div>
+    </div>
+    <footer class="container-fluid">
+      <span class = "col-sm-2 text-center footertext">
+      </span>
+      <span class = "col-sm-8 text-center footertext">
+        <a href="#">Click Here to Give Feedback</a>
+      </span>
+      <span class = "col-sm-2 text-center footertext">
+      </span>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>
