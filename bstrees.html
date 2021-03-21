@@ -48,8 +48,8 @@
           <h1><b><u>What is a Binary Search Tree?</u></b></h1>
           <br>
           <p>A binary search tree is part of a family of data structures known as <b>trees</b>. Trees, like linked lists, store data as a collection of containers called <b>nodes</b>. However, the nodes of a tree are completely different from those of a linked list.
-          Tree nodes are organized using parent-child relationships, where nodes points down to one or more other nodes. A node pointing down is known as a parent while the nodes it is pointing down to are its children. Nodes that share the same parent are known as <b>siblings</b>.
-          The <b>root</b> of a tree is the node located at its very top, thus it cannot have any parents. The <b>leaves</b> of a tree are the nodes that do not have any children. A <b>subtree</b> of a node is a tree made up of one of its children and all of that child's descendants.
+          Tree nodes are organized using parent-child relationships, where nodes points down to one or more other nodes. A node pointing down to another is known as a <b>parent</b> while the node it is pointing down is known as a <b>child</b>. Nodes that share the same parent are known as <b>siblings</b>.
+          Note that while a parent node can have multiple children, a child node can only have one parent. The node at the very top of a tree has no parent and is called a <b>root</b>. Nodes with no children are known as <b>leaves</b> and are usually found at the bottom. A <b>subtree</b> of a node is a tree made up of one of its children and all of that child's descendants.
           The <b>height</b> of a tree is the distance from the root node to the bottom-most leaf node.</p>
           <br>
           <div>
@@ -69,8 +69,6 @@
                 <li><b>The left subtree of a node can only contain values less said node's.</b></li>
                 <br>
                 <li><b>The right subtree of a node can only contain values greater than said node's.</b></li>
-                <br>
-                <li><b>Any subtree within the tree must also be a binary search tree.</b></li>
               </ul>
             </span>
             <span class = "col-sm-5">
@@ -79,7 +77,7 @@
             </span> 
           </div>
           <br>
-          <p>A binary search tree can either be <b>balanced</b> or <b>unbalanced</b>. In a balanced binary search tree, the heights of the subtrees of any node must not differ by more than 1. This ensures that the overall height of the binary search tree is kept to a minimum, which allows for faster searching. In an unbalanced 
+          <p>A binary search tree can either be <b>balanced</b> or <b>unbalanced</b>. In a balanced binary search tree, the heights of the subtrees of any node must not differ by more than 1. This ensures that the overall height of the binary search tree is kept to a minimum, which is needed for optimal performance. In an unbalanced 
           binary search tree, a node can have subtrees with wildly different heights. In the worse case scenario, each parent may only have 1 child node leading to a tree that essentially functions as a linked list. This is known as a <b>degenerate</b> tree and is highly undesirable.</p>
           <br>
           <div>
@@ -91,7 +89,7 @@
           <br>
           <h4>• <b><u>Efficient Search</u></b></h4>
           <p class = "indented">Since the elements of a binary search tree are stored in a particular order, there is no need to blindy check each node until the target is found. Instead, we can navigate through the tree starting from the root by comparing the node we are currently on
-          to our target. If our target's value is equal to the current node's, we have found it. If it is less than, we move to the current node's left child. If it is greater than, we move to the right child. If a situation occurs where our current node does not exist, then the tree does not contain our target.
+          to our target. If our target's value is equal to the current node's, we have found it. If it is less, we move to the current node's left child. If it is greater, we move to the right child. If a situation occurs where our current node does not exist, then the tree does not contain our target.
           Even though this method is faster than blind checks, we may still need to go through many nodes if the tree is unbalanced or worse, degenerate. 
           </p>
           <div>
@@ -105,7 +103,7 @@
           The latter action can be done instantly regardless of the tree's size or structure. All that needs to be done is altering the target leaf so that it points to the newly inserted node</p>
           <br>
           <p class = "indented">As for deletion, the actions needed to be taken depends on the its status of the target node. If it is a leaf, then all that needs to be done is altering its parent so that it no longer points to the target. If the target node is a parent
-            with a single child, then that child must replace it. If it is a parent with 2 children, then it must be replaced by the smallest node in its right subtree. The time needed to find this node depends on the height of the subtree and how unbalanced the subtree is. The actual replacement 
+            with a single child, then that child must replace it. If the target is a parent with 2 children, then it must be replaced by the smallest node in its right subtree. The time needed to find this node depends on the height of the subtree and how unbalanced the subtree is. The actual replacement 
             can be done instantly regardless of the tree's size and structure.</p>
           <br>
           <div class = "row">
@@ -127,15 +125,13 @@
           <br>
           <h4>• <b><u>Balancing</u></b></h4>
           <p class = "indented">A binary search tree must be balanced in order to attain optimal performance. However, even if a tree starts off as balanced, it may degenerate as nodes are added and removed. This problem can be avoided by using
-          a <b>self-balancing</b> binary search tree, which maintains its balanced property by rearranging the tree as nodes are added and removed. However, such rearrangements may take up a lot of time if there are many nodes within the tree.
-          Thus it is not recommended to use binary search trees to store large amounts of data. </p>
+          a <b>self-balancing</b> binary search tree, which maintains its balanced property by rearranging itself as nodes are added and removed. However, such rearrangements may take up a lot of time if there are many nodes within the tree.
+          Thus, it is not recommended to use binary search trees to store large amounts of data. </p>
           <br>
           <h4>• <b><u>High Maintenance</u></b></h4>
-          <p class = "indented">When a binary search tree performs even basic functions such as insertion and deletion, many steps need to be taken to ensure that it still remains a binary search tree. As such, binary search trees require
+          <p class = "indented">When a binary search tree performs even basic functions such as insertion and deletion, many steps need to be taken to ensure that it maintains the properties of a binary search tree. As such, binary search trees require
           more computational space to complete tasks than other data structures.
           </p>
-          <br>
-          <br>
           <hr>
           <h1><b><u>Binary Search Tree Applications</u></b></h1>
           <br>
@@ -143,7 +139,7 @@
           <br>
           <ul>
             <li><u><b>Implementing Various Search Algorithms</b></u>: There are several ways to search for an item through a set of data, but the most efficient ones require the data be sorted in a particular order beforehand. After all, if the data is underordered,
-            the only possible method would be to blindly check each element. A binary search trees automatically sorts its contents as new nodes are added, making it an appropriate for showing how various searching algorithms work.</li>
+            the only possible method would be to blindly check each element. A binary search tree automatically sorts its contents as new elements are added, making it an appropriate for running various searching algorithms.</li>
             <br>
           </ul>
           <br>

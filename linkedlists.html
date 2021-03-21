@@ -47,65 +47,66 @@
         <div class="col-sm-8 column text-left"> 
           <h1><b><u>What is a Linked List?</u></b></h1>
           <br>
-          <p>A linked list is a series of containers known as <b>nodes</b>. A standard linked list is known as a <b>singly linked list</b>. Each node normally contains 2 things, a stored data value and the memory location of the next node in the list. It can be said that each node "points" to the next. The first node in a linked list is known as the <b>head node</b>, and
+          <p>A linked list is a series of containers known as <b>nodes</b>. Each node normally contains 2 things, a stored data value and the memory location of the next node in the list. It can be said that each node "points" to the next. The first node in a linked list is known as the <b>head node</b>, and
           it serves as a representation of the linked list. This is because the head node is all that's needed to find every other node in the list. The last is known as the <b>tail node</b>. Since there is nothing which comes after the tail node, the location that it points to is null.</p> 
           <br>
           <div>
             <img class= "center" src = "images/linkedlist1.png"></img>
-            <div class = "caption">Singly Linked List with 4 nodes, each one storing an integer</div>
+            <div class = "caption">Linked list with 4 nodes, each one storing an integer</div>
           </div>
           <br>
-          <p>There exists a special type of linked list known as a doubly-linked list. In this linked list, each node stores not only the memory location of the next node, but that of the previous as well. This allows for backwards traversal, 
+          <p>A standard linked list is known as a <b>singly linked list</b> since it can only be traversed in a single direction, forward. However, there exists a special type of linked list known as a <b>doubly-linked list</b>. In this linked list, each node stores not only the memory location of the next node, but that of the previous as well. This allows for backwards traversal, 
           a function that cannot be performed by a singly linked list.</p>
           <br>
           <div>
             <img class= "center" src = "images/linkedlist2.png"></img>
-            <div class = "caption">Doubly Linked List with 4 nodes, each one storing an integer</div>
+            <div class = "caption">Doubly linked list with 4 nodes, each one storing an integer</div>
           </div>
           <br>
-          <p>A linked list can also be a <b>circular linked list</b> where the tail node points back to the head node as next. In a circular doubly linked list, the head node will point to the tail as previous as well. Circular linked lists allow for complete traversal 
-          of the list starting from any node. They are useful for applications that function in a circular manner or loops.</p>
+          <p>A linked list can also be a <b>circular linked list</b> where the tail node points back to the head node as its next. Furthermore, in a circular doubly linked list, the head node will point to the tail as its previous. Circular linked lists allow for complete traversal 
+          starting from any node. They are useful for applications that function in a circular manner or loops.</p>
           <br>
           <div>
             <img class= "center" src = "images/linkedlist3.png"></img>
-            <div class = "caption">Circular Singly Linked List with 4 nodes, each one storing an integer</div>
+            <div class = "caption">Circular singly linked List with 4 nodes, each one storing an integer</div>
           </div>
           <br>
           <hr>
           <h1><b><u>What are the Advantages of a Linked List?</u></b></h1>
           <br>
           <h4>• <b><u>Dynamic Size and Memory Usage</u></b></h4>
-          <p class = "indented">The size and memory space of a linked list changes depending on how much data is stored in it. Thus, there is no way for a linked list to "waste" memory like an array. Furthermore, linked lists have no set capacity so it can handle data of unknown size.</p>
+          <p class = "indented">The size and memory space of a linked list changes as nodes are added and removed. When a node is added, more memory is allocated to the linked list, and when one is removed, memory is freed up. Thus, there is no way for a linked list to "waste" memory like how an array can. Furthermore, linked lists have no set capacity so it can handle data of unknown size by adapting.</p>
           <br>
           <h4>• <b><u>Fast Insertion and Deletion</u></b></h4>
           <p class = "indented">In order to insert a node into a position within a linked list, all that needs to be done is alter the node at the previous position to point to the one being inserted. The node that the previous was originally pointing to will be set as the newly inserted node's next.
-          Similarly for deletion, all that needs to be done is alter the node at the target's previous position to point to the target's next. There will be no node pointing to the target, effectively removing it from the linked list.</p>
+          Similarly for deletion, all that needs to be done is alter the node at the target's previous position to point to the target's next. There will be no node pointing to the target, effectively removing it from the linked list. A linked list performs insertion and deletion at the same speed, regardless of
+          its size, making it very suitable for these functions.</p>
           <br>
           <div class = "row">
             <span class = "col-sm-6">
               <img class= "center" src = "images/linkedlist4.png"></img>
-              <div class = "caption">Singly Linked List with 4 nodes peforming insertion</div>
+              <div class = "caption">Singly Linked list with 4 nodes peforming insertion</div>
             </span>
             <span class = "col-sm-6">
               <img class= "center" src = "images/linkedlist5.png"></img>
-              <div class = "caption">Singly Linked List with 4 nodes peforming deletion</div>
+              <div class = "caption">Singly linked list with 4 nodes peforming deletion</div>
             </span> 
           </div>
           <hr>
           <h1><b><u>What are the Disadvantages of a Linked List?</u></b></h1>
           <br>
           <h4>• <b><u>Large Memory Usage</u></b></h4>
-          <p class = "indented">The nodes that make up a linked list take up quite a bit of memory space as they have to store both data values and the memory locations of their next nodes. This drawback gets worse in the case of doubly linked lists where two addresses need to be stored per node. 
-          As such, in situations where memory space is sparse, it may not be a good idea to use a linked list for storing data.</p>
+          <p class = "indented">The nodes that make up a linked list take up quite a bit of memory space, as they have to store both data values and the memory addresses of their next nodes. This drawback gets worse in the case of doubly linked lists where two addresses need to be stored per node. 
+          As such, in situations where memory space is sparse, it may not be a good idea to use a linked list for data storage.</p>
           <br>
           <h4>• <b><u>Inefficient Accessing</u></b></h4>
           <p class = "indented">In order to access a node at a specific position within a linked list, it is necessary to go through the list and past each node that comes before. As a result, accessing a node near the tail will take quite a bit of time. If the linked list contains many nodes, 
-          even more time will be needed. Circular doubly linked lists aren't as affected by this due to its ability to perform forward and backwards traversal from the head. However, the tradeoff is a sharp increase in memory usage. 
+          even more time will be needed. Circular doubly linked lists aren't as affected by this due to its ability to perform forward and backwards traversal from the head. However, the tradeoff is a sharp increase in memory usage for each node. 
           </p>
           <br>
           <h4>• <b><u>Slow Traversal</u></b></h4>
-          <p class = "indented">Although the nodes in a linked list point to each other's locations in memory, they are stored incontiguously. This means that their memory locations are spread out and moving from one to the next cannot be done quickly. 
-          As a result, linked lists are not suited for traversing through.</p>
+          <p class = "indented">Although the nodes in a linked list point to each other's locations in memory, they are stored non-contiguously. This means that their memory addresses are spread out, and nodes near each other within a linked list are usually far away from each other in memory. 
+          As a result, linked lists are not suited for traversing through since moving from one node to another cannot be done quickly.</p>
           <hr>
           <h1><b><u>Linked List Applications</u></b></h1>
           <br>
@@ -116,7 +117,8 @@
             <li><u><b>Music Playlist</b></u>: In a playlist, songs are frequently added and removed. The ability to go to next or previous song is also a necessary feature. If the playlist needs to be repeated, the last song must be able to go back to the first. A circular doubly-linked list 
             would be a good structure to story the songs in.</li>
             <br>
-            <li><u><b>Browser Page History</b></u>: Storing browsing history in a doubly-linked list will allow a user to revisit a previous page and then go back to current if they wish.</li>
+            <li><u><b>Browser Page History</b></u>: Storing a browser's page history in a doubly linked list would allow users to go back to previously visited pages and return to current if they wished. Furthermore, when a user wants to clear 
+            parts of their browsing history, deletions needs to be done to the data, a function that linked lists specialize in.</li>
             <br>
           </ul>
           <br>

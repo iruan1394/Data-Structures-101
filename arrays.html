@@ -47,7 +47,7 @@
         <div class="col-sm-8 column text-left"> 
           <h1><b><u>What is an Array?</u></b></h1>
           <br>
-          <p>The Array is a very simple data structure. It is a container that holds a fixed number of elements that are of the same type. Each element within the array has its own <b>index</b>, or position within the array, starting from 0. The first element will be at index 0,
+          <p>The array is a very simple data structure. It is a container that can hold up to fixed number of elements that are of the same type. Each element within an array has its own <b>index</b>, or position within the array, starting from 0. The first element will be at index 0,
           the second index 1, the third 2, and so on. Thus, an array of 5 elements will store them in indexes from 0 to 4.</p> 
           <br>
           <div>
@@ -55,7 +55,7 @@
             <div class = "caption">Indexes of an array that holds 5 elements</div>
           </div>
           <br>
-          <p>Arrays also store their contents in contiguous memory. This means the elements of the array are all stored adjacent to each other in a computer's memory. If for example, the first element of an array is stored at memory location 200, the second element will be stored at memory location 201, the third at 202, and so on. </p>
+          <p>Arrays store their contents in what's known as <b>contiguous memory</b>. This means the elements of the array are all stored in adjacent memory addresses. If for example, the first element of an array is stored at memory location 200, the second element will be stored at memory location 201, the third at 202, and so on. </p>
           <br>
           <div>
             <img class= "center" src = "images/array3.png"></img>
@@ -65,12 +65,12 @@
           <h1><b><u>What are the Advantages of an Array?</u></b></h1>
           <br>
           <h4>• <b><u>Fast Accessing at any Index</u></b></h4>
-          <p class = "indented">Because the contents of an array are stored in contiguous memory, the memory location of each element within the it is known. Therefore, it is possible to directly access an element at any index without going through previous elements.  
-          Furthermore, the access will always take the same amount of time regardless of the target index. This means that no matter how large the array may be, the time it takes to access any element within it will not change. This quality is known as <b>random access</b>, and very few 
+          <p class = "indented">Because the contents of an array are stored in contiguous memory, the memory addresses of every element within it are known. Therefore, it is possible to directly access an element at any index without going through previous elements.  
+          Furthermore, the accessing will always take the same amount of time, regardless of the target index. This means that no matter how large an array is, the time it takes to access any element within it will not change. This quality is known as <b>random access</b>, and very few 
           data structures besides the array possesses it. </p>
           <br>
           <h4>• <b><u>Fast Traversal</u></b></h4>
-          <p class = "indented">Since the elements of an array are stored side by side in memory, it is quite easy to move from one element to the next. This, along with random access, makes arrays ideal for quickly going through and reading a set of data.</p>
+          <p class = "indented">Since elements with adjacent indexes in an array are also stored in memory addresses, moving from one element to the next can be done quite quickly. This, along with random access, makes arrays an ideal data structure for reading through a set of data.</p>
           <hr>
           <h1><b><u>What are the Disadvantages of an Array?</u></b></h1>
           <br>
@@ -79,12 +79,12 @@
           use arrays to store data of unknown size.</p>
           <br>
           <h4>• <b><u>Fixed Memory Allocation</u></b></h4>
-          <p class = "indented">An array will always take up a set amount of memory space no matter how many elements it contains. Even when it's empty, it will take up the same amount of memory as when it's full. Therefore,
-          memory will be "wasted" if the array isn't fully populated. This can be avoided by simply knowing the size of the data that's going to be stored and creating the array with a matching capacity.</p>
+          <p class = "indented">An array will always take up a set amount of memory space based on its capacity. Even if an array is empty, it will take up the same amount of memory as if it's full. Therefore,
+          memory can be considered "wasted" if an array isn't fully populated. This situation can be avoided by simply knowing the size of the data that's going to be stored beforehand and creating the array with a matching capacity.</p>
           <br>
           <h4>• <b><u>Inefficient Insertion and Deletion</u></b></h4>
-          <p class = "indented">When an element is inserted into an array at an index that's not the last, the element that was previously at that index, as well as all of the elements after it, needs to be shifted forward. This can be extremely cumbersome if the array holds 
-          a large number of elements or if the index being inserted into is near the beginning of the array. The same holds true for deletion; all of the elements positioned after the index needs to be shifted backwards to fill in the gap.</p>
+          <p class = "indented">When an element is inserted into an array at an index that's not the end, the element that was previously at that index, as well as all of the elements after it, needs to be shifted forward. This is an extremely cumbersome process, especially if the array holds 
+          a large number of elements or if the index being inserted into is near the beginning of the array. The same holds true for deletion; once an element has been deleted, all of the elements positioned after it needs to be shifted backwards to fill in the gap.</p>
           <br>
           <div class = "row">
             <span class = "col-sm-6">
@@ -99,12 +99,13 @@
           <hr>
           <h1><b><u>Array Applications</u></b></h1>
           <br>
-          <p>Arrays are very versatile and can be used in many situations. However, they are most suitable for data that has a known size. They are also the preferred choice when a lot of accessing needs to be done on various locations within the data.
-          Some examples of applications of the array data structure are: </p>
+          <p>Arrays are very versatile and can be used in many situations. However, they are most suitable for storing data that's size is known. They are also the preferred choice when a lot of accessing needs to be done at various locations within the data.
+          Some examples of applications of the array data structure include: </p>
           <br>
           <ul>
-            <li><u><b>Matrixes</b></u>: A matrix in mathematics is a 2-dimensional set of numbers. It has a defined amount of rows and columns, which means it's size is fixed. This makes a <b>nested array</b>, or an array whose elements are also arrays, suitable for storing this data. </li>
-            <li><u><b>Implementation of Other Data Structures</b></u>: Arrays can be used to create more complex data structures such as stacks and queues. Because of how simple arrays are, they are also extremely versatile and often become the foundations for many classes, objects, and structures in applications.</li>
+            <li><u><b>Matrixes</b></u>: A matrix in mathematics is a 2-dimensional set of numbers. It has a defined amount of rows and columns, which means it's size is fixed and known. This makes a <b>nested array</b>, an array thats elements are also arrays, suitable for implementing them. </li>
+            <br>
+            <li><u><b>Implementing Other Structures</b></u>: Because of the simplicity and versatilty, arrays are often used to create more complex data structures such as <a href = "stacks.html"><u>stacks</u></a> and <a href = "queues.html"><u>queues</u></a>. They are also used to implement heavily used classes such as the Vector in C++ and the Arraylist in Java.</li>
           </ul>
           <br>
         </div>

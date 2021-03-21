@@ -47,10 +47,10 @@
         <div class="col-sm-8 column text-left"> 
           <h1><b><u>What is a Hash Table?</u></b></h1>
           <br>
-          <p>A hash table is a very unique data structure. In a hash table, each element is made up of 2 things: a key and a value. A <b>key</b> is a unique identifier needed to access its corresponding <b>value</b>, a piece of stored data. 
+          <p>A hash table is a very unique data structure. In a hash table, each element is made up of 2 things: a key and a value. A <b>key</b> is a unique identifier needed to access a corresponding <b>value</b>, a piece of stored data. 
           Values in a hash table are stored in indexed slots known as <b>buckets</b>. When a key-value pair is added to a hash table, the value needs to be assigned a bucket. This is done through the use of a 
-          <b>hash function</b>. A hash function takes in a key and returns a number depending on what the key is. This number is known as a <b>hash value</b> and represents the bucket in which the corresponding value will be stored. The purpose of a hash function
-          is to ensure that it is impossible to access any value within the hash table without knowing its corresponding key.
+          <b>hash function</b>. A hash function takes in a key and returns a number depending on what the key is. This number is known as a <b>hash value</b> and represents the bucket in which the key's corresponding value will be stored. The purpose of a hash function
+          is to ensure that it is impossible to access any value within the hash table without knowing its key.
           </p> 
           <br>
           <div>
@@ -84,8 +84,8 @@
           <h1><b><u>What are the Advantages of a Hash Table?</u></b></h1>
           <br>
           <h4>• <b><u>Efficient Searching</u></b></h4>
-          <p class = "indented">In order to find a value within a hash table, the only thing that needs to be done is computing its hash value using its key. As long as there were no collisions,
-          it will always take the same amount of time to find any value within the table. As a result, hash tables are appropriate for holding large amounts of data that needs to be searched through. 
+          <p class = "indented">In order to find a value within a hash table, the only thing that needs to be done is computing its key's hash value. As long as there were no collisions,
+          it will always take the same amount of time to find any value within the table. As a result, hash tables are appropriate for holding large amounts of data with items that need to be searched for. 
           </p>
           <br>
           <h4>• <b><u>Efficient Insertion and Deletion</u></b></h4>
@@ -101,8 +101,8 @@
           </p>
           <br>
           <h4>• <b><u>Ineffective for Small Data Sets</u></b></h4>
-          <p class = "indented"> Even though hash tables are known for their speed, they can still be beaten by other data structures when the size of the data stored is small. This is because hash tables often have to run its hash function on keys when performing a function. If the table is using an effective hash function,
-          these computations will take quite a bit of time, exceeding the time needed for alternative data structures to perform the same function.  Therefore, when working with small amounts of data, hash tables may not be the most optimal means of storage.
+          <p class = "indented"> Even though hash tables are known for their speed, they can still be beaten by other data structures when the size of the data stored is small. This is because of the hash function. If the table is using an effective hash function,
+          computing a single hash value can take a while, exceeding the time needed for alternative data structures to perform the desired task.  Therefore, when working with small amounts of data, hash tables may not be the most optimal means of storage.
           </p>
           <br>
           <hr>
