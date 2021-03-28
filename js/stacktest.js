@@ -177,13 +177,13 @@ function stackAccess(length){ // create stack with length elements and measure t
     
     var t1 = performance.now();    
 
-    var store = new Stack();
+    var store = new Stack(); // keep popping into another stack until stack size is halved 
     for(var j = 0; j < Math.floor(length/2); j++)
         store.push(s.pop());
     
-    var temp = s.peek();
+    var temp = s.peek(); 
 
-    while(store.size() != 0)
+    while(store.size() != 0) // push all the element's previously popped out
         s.push(store.pop());    
 
     return(performance.now() - t1);
@@ -198,12 +198,12 @@ function stackSearch(length){ // create stack with length elements and measure t
 
     var store = new Stack();
     var currIndex = s.size() - 1;
-    while(s.size() != 0 && s.peek() != Math.floor(length/2)){
+    while(s.size() != 0 && s.peek() != Math.floor(length/2)){ // keep popping to another stack until either the top element matches or the stack is empty. when this exits, currIndex will either be target index or -1
         store.push(s.pop());
         currIndex--;
     }
 
-    while(store.size() != 0)
+    while(store.size() != 0) // push all the element's previously popped out
         s.push(store.pop());
     
     return(performance.now() - t1);
@@ -217,18 +217,18 @@ function stackFInsert(length){ // create stack with length elements and measure 
     var t1 = performance.now();  
 
     var store = new Stack(); 
-    while(s.size() != 0)
+    while(s.size() != 0) // empty stack and store its elements in another stacks
         store.push(s.pop());
 
-    s.push(0);
+    s.push(0); // push the element we want to insert in
 
-    while(store.size() != 0)
+    while(store.size() != 0) // push all the element's previously popped out
         s.push(store.pop());
     
     return(performance.now() - t1);
 }
 
-function stackEInsert(length){
+function stackEInsert(length){ // create stack with length elements and measure time needed to push an element
     var s = new Stack();
     for(var i = 1; i <= length; i++)
         s.push(i);
@@ -238,34 +238,34 @@ function stackEInsert(length){
     return(performance.now() - t1);
 }
 
-function stackFDelete(length){
+function stackFDelete(length){ // create stack with length elements and measure time needed to delete the bottom element
     var s = new Stack();
     for(var i = 1; i <= length; i++)
         s.push(i);
 
     var t1 = performance.now();  
-    if(s.size() == 0)
+    if(s.size() == 0) // if stack is empty, nothing can be done
         return (performance.now() - t1);
     else{
         var store = new Stack(); 
-        while(s.size() > 1)
+        while(s.size() > 1) // remove all elements except the bottom-most one while storing them in another stack
             store.push(s.pop());
 
-        s.pop();
+        s.pop(); // remove the bottom-most element
 
-        while(store.size() != 0)
+        while(store.size() != 0) // push all the element's previously popped out
             s.push(store.pop());
 
         return (performance.now() - t1);
     }
 }
 
-function stackEDelete(length){
+function stackEDelete(length){ // create stack with length elements and measure time needed to perform a pop
     var s = new Stack();
     for(var i = 1; i <= length; i++)
         s.push(i);
     var t1 = performance.now();  
-    if(s.size() == 0)
+    if(s.size() == 0) // if stack is empty, nothing can be done
         return(performance.now() - t1);
     else{
         s.pop();
