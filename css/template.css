@@ -4,6 +4,9 @@
     margin-bottom: 0;
     border-radius: 0;
 }
+.navbar .col-md-3{
+    border-right: 1px groove white;
+}
 .page-header{
     text-align:center;
     border-bottom: 0 none;
@@ -22,9 +25,6 @@ p a{
     padding: 14px 16px;
     text-decoration: none;
 }
-.menucomp{
-    
-}
 .caption, .caption a{
     text-align:center;
     color: grey;
@@ -35,8 +35,24 @@ p a{
     margin-right: auto;
 }
 .dropdown {
-    float: center;
+    display:table;
 }
+
+.testbutton{
+    font-size: 16px;
+    color: white;
+    background-color: #555555;
+    padding: 14px 16px;
+    font-family: inherit; 
+    min-width: 75%;
+    margin-top:10%;
+    transition-duration: 0.4s;
+}
+
+.testbutton:hover{
+    background-color: black;
+}
+
 .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -47,7 +63,7 @@ p a{
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit; 
-    margin: 0; 
+    min-width: 100%;
 }
 .indented{
     margin-left:5%;
@@ -68,10 +84,6 @@ html, body {
     padding-bottom: 20000px;
     margin-bottom: -20000px;
 }
-.dropbtn{
-    display: block;
-    width: 100%;
-}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -86,6 +98,9 @@ dt{
 }
 li, dd{
     font-size: 16.5px;
+}
+.col-md-3{
+    padding:0px;
 }
 .footertext{
     top: 50%;
@@ -123,6 +138,9 @@ footer{
 }
 .dropdown:hover .dropdown-content {
     display: block;
+}
+.dropdown:hover .dropbtn{
+    background-color: #555;
 }
 .sidenav{
     padding-top: 20px;
