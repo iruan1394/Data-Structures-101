@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Stack Tests</title>
+    <title>Queue Tests</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="css/template.css">
     <link rel="icon" href="images/favicon.ico">
@@ -53,23 +53,25 @@
             <li>Measured times are rounded to the nearest hundred thousandth's place with excess 0's removed. It is possible for a function's runtime to be shown as 0 if it's too small.</li>
             <br>
             <li>Access and Search are done in average case where the target element is right in the middle of the structure.</li>
+            <br>
+            <li>Times shown are those of a standard queue. Deques will have different time efficiencies due to having more capabilities.</li>
           </ul>
           <br>
           <div class = "row filler"></div>
           <div class = "row">
             <div class="col-sm-3"> 
               <br>
-              <div><button onclick = "stackGraph(1);" class = "center testbutton">Access</button></div>
+              <div><button onclick = "queueGraph(1);" class = "center testbutton">Access</button></div>
               <br>
-              <div><button onclick = "stackGraph(2);" class = "center testbutton">Search</button></div>
+              <div><button onclick = "queueGraph(2);" class = "center testbutton">Search</button></div>
               <br>
-              <div><button onclick = "stackGraph(4);" class = "center testbutton">Top Insertion</button></div>
+              <div><button onclick = "queueGraph(3);" class = "center testbutton">Front Insertion</button></div>
               <br>
-              <div><button onclick = "stackGraph(3);" class = "center testbutton">Bottom Insertion</button></div>
+              <div><button onclick = "queueGraph(4);" class = "center testbutton">Back Insertion</button></div>
               <br>
-              <div><button onclick = "stackGraph(6);" class = "center testbutton">Top Deletion</button></div>
+              <div><button onclick = "queueGraph(5);" class = "center testbutton">Front Deletion</button></div>
               <br>
-              <div><button onclick = "stackGraph(5);" class = "center testbutton">Bottom Deletion</button></div>
+              <div><button onclick = "queueGraph(6);" class = "center testbutton">Back Deletion</button></div>
               <br>
             </div>
             <div class = "col-sm-9">
@@ -80,7 +82,7 @@
           <div class = "row filler"></div>
           <h2><b><u>Explanation: </u></b></h2>
           <br>
-          <p class = "indented" id = "stackexp">Run a test to see its explanation!</p>
+          <p class = "indented" id = "queueexp">Run a test to see its explanation!</p>
           <br>
         </div>
         <div class="col-sm-2 column sidenav"></div>
@@ -98,6 +100,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="js/stacktest.js"></script>
+    <script src="js/queuetest.js"></script>
   </body>
 </html>

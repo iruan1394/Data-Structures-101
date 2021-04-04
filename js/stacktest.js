@@ -6,8 +6,9 @@ class Stack{ // basic implementation of stack using array
         this.data.push(val);
     }
     pop(){
-        if(this.data.length != 0)
-            return this.data.pop();
+        if(this.size() == 0)
+            return null;
+        return this.data.pop();
     }
     peek(){
         return this.data[this.data.length - 1];
@@ -69,7 +70,7 @@ function stackGraph(num){
         lab = "Access"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackAccess(i*10000).toFixed(5));
-        while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackAccess(i*10000).toFixed(5));
@@ -81,7 +82,7 @@ function stackGraph(num){
         lab = "Search"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackSearch(i*10000).toFixed(5));
-        while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackSearch(i*10000).toFixed(5));
@@ -93,7 +94,7 @@ function stackGraph(num){
         lab = "Bottom Insertion"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackFInsert(i*10000).toFixed(5));
-        while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackFInsert(i*10000).toFixed(5));
@@ -112,7 +113,7 @@ function stackGraph(num){
         lab = "Bottom Deletion"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackFDelete(i*10000).toFixed(5));
-        while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackFDelete(i*10000).toFixed(5));
@@ -181,7 +182,7 @@ function stackAccess(length){ // create stack with length elements and measure t
     for(var j = 0; j < Math.floor(length/2); j++)
         store.push(s.pop());
     
-    var temp = s.peek(); 
+    var temp = s.peek(); // access the middle element thats now at the top
 
     while(store.size() != 0) // push all the element's previously popped out
         s.push(store.pop());    

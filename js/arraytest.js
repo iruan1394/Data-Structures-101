@@ -55,7 +55,7 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arraySearch(i*100000).toFixed(5));
 
-      while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arraySearch(i*100000).toFixed(5));
@@ -69,7 +69,7 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arrayFInsert(i*100000).toFixed(5));
 
-      while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arrayFInsert(i*100000).toFixed(5));
@@ -90,7 +90,7 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arrayFDelete(i*100000).toFixed(5));
 
-      while(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arrayFDelete(i*100000).toFixed(5));

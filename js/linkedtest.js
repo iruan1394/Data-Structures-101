@@ -164,7 +164,7 @@ function linkedGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(linkedAccess(i*100000).toFixed(5));
 
-      while(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
+      if(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(linkedAccess(i*100000).toFixed(5));
@@ -179,7 +179,7 @@ function linkedGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(linkedSearch(i*100000).toFixed(5));
 
-      while(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
+      if(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(linkedSearch(i*100000).toFixed(5));
