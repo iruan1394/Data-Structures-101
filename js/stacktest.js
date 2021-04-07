@@ -22,6 +22,7 @@ class Stack{ // basic implementation of stack using array
 }
 
 function initialize(){
+    ran = [false, false, false, false];
     pointsnum = 10; // # of points we want on our graph
     xAxisLabels = []
     for(var i = 0; i <= pointsnum; i++)
@@ -70,10 +71,11 @@ function stackGraph(num){
         lab = "Access"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackAccess(i*10000).toFixed(5));
-        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(!ran[0]){ // ignore first dataset
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackAccess(i*10000).toFixed(5));
+            ran[0] = true;
         }
         document.getElementById("stackexp").innerHTML = "Accessing the top element of a stack is instantaneous and unaffected by the stack's size. However, in order to access any other element within the stack, popping needs to be done until the target becomes the top of the stack. Once its value is known, the elements that were previously popped out need to be pushed back in. This process will take longer if the target element is near the bottom of the stack or if the stack simply contains a lot of elements.";
         break;
@@ -82,10 +84,11 @@ function stackGraph(num){
         lab = "Search"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackSearch(i*10000).toFixed(5));
-        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(!ran[1]){ // ignore first dataset
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackSearch(i*10000).toFixed(5));
+            ran[1] = true;
         }
         document.getElementById("stackexp").innerHTML = "Since the elements of a stack are not sorted according to their values, the only way to find a specific element is to keep popping from the stack until either the target is found or if the stack becomes empty. Once one of these 2 outcomes occurs, the popped elements need to be pushed back in. This function's runtime will increase as the stack's size does as more elements will need to be checked on average.";
         break;
@@ -94,10 +97,11 @@ function stackGraph(num){
         lab = "Bottom Insertion"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackFInsert(i*10000).toFixed(5));
-        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(!ran[2]){ // ignore first dataset
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackFInsert(i*10000).toFixed(5));
+            ran[2] = true;
         }
         document.getElementById("stackexp").innerHTML = "Stacks do not allow for direct insertion at the bottom. In order to do so, every element in the stack needs to be popped out. After that, the element that needs to be inserted can be pushed in. Finally, every element that had been popped out needs to be pushed back in. Like access and search, bottom insertion's runtime scales with the stack's size.";
         break;
@@ -113,10 +117,11 @@ function stackGraph(num){
         lab = "Bottom Deletion"
         for(var i = 0; i <= pointsnum; i++)
             times.push(stackFDelete(i*10000).toFixed(5));
-        if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+        if(!ran[3]){ // ignore first dataset
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(stackFDelete(i*10000).toFixed(5));
+            ran[3] = true;
         }
         document.getElementById("stackexp").innerHTML = "Similar to bottom insertion, in order to delete an element at the bottom of a stack, popping needs to be done until the stack is empty. After that, every element except the one that was last popped needs to be pushed back in. Like bottom insertion, bottom deletion's runtime will increase as the stack's size increases";
         break;
@@ -176,10 +181,12 @@ function stackAccess(length){ // create stack with length elements and measure t
     for(var i = 1; i <= length; i++)
         s.push(i);
     
+
+    var target = Math.floor(length/2);
     var t1 = performance.now();    
 
     var store = new Stack(); // keep popping into another stack until stack size is halved 
-    for(var j = 0; j < Math.floor(length/2); j++)
+    for(var j = 0; j < target; j++)
         store.push(s.pop());
     
     var temp = s.peek(); // access the middle element thats now at the top
@@ -195,13 +202,16 @@ function stackSearch(length){ // create stack with length elements and measure t
     for(var i = 1; i <= length; i++)
         s.push(i);
 
+    var target = Math.floor(length/2);
     var t1 = performance.now();   
-
+    var t2;
     var store = new Stack();
-    var currIndex = s.size() - 1;
-    while(s.size() != 0 && s.peek() != Math.floor(length/2)){ // keep popping to another stack until either the top element matches or the stack is empty. when this exits, currIndex will either be target index or -1
-        store.push(s.pop());
-        currIndex--;
+
+    for(var j = 0; j < s.size(); j++){
+        if(s.peek() == target)
+            break;
+        else
+            store.push(s.pop());
     }
 
     while(store.size() != 0) // push all the element's previously popped out

@@ -1,4 +1,5 @@
 function initialize(){
+  ran = [false, false, false];
     pointsnum = 10; // # of points we want on our graph
     xAxisLabels = []
     for(var i = 0; i <= pointsnum; i++){
@@ -55,10 +56,11 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arraySearch(i*100000).toFixed(5));
 
-      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(!ran[0]){ // ignore first dataset
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arraySearch(i*100000).toFixed(5));
+        ran[0] = true;
       }
 
       document.getElementById("arrayexp").innerHTML = "Because arrays do not store their contents in a specific order, the only way to find an element within one is to blindly go through the array until one of two things happen. Either the target is found, or the end of the array has been reached. This process takes longer if the target is near the end of the array or if the array is simply very large. Array search will take increasing time as the array grows."
@@ -69,10 +71,11 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arrayFInsert(i*100000).toFixed(5));
 
-      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(!ran[1]){ // ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arrayFInsert(i*100000).toFixed(5));
+        ran[1] = true;
       }
 
       document.getElementById("arrayexp").innerHTML = "In order to insert an element into an array at a position that's not the last, the element that was originally at that position and every element after it need to be shifted forward. This is an extremely cumbersome process and scales with the array's size."
@@ -90,10 +93,11 @@ function arrayGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(arrayFDelete(i*100000).toFixed(5));
 
-      if(times[1] > times[3] * 2){ // ignore dataset where runtime for 100000 is unnaturally high 
+      if(!ran[2]){ // ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(arrayFDelete(i*100000).toFixed(5));
+        ran[2] = true;
       }
       document.getElementById("arrayexp").innerHTML = "Removing an element from an array is quite costly when the target's position is not the last. After the element has been deleted, every element positioned after it needs to be shifted back to fill in the gap. Similar to front insertion, array front deletion will take more time as arraay size increases."
       break;
@@ -152,13 +156,13 @@ function arrayAccess(length){ // create array with size length and measure the t
   var arr = [];
   for (var i = 1; i <= length; i++)
     arr.push(i);
-
+  var target = Math.floor(length/2) - 1;
   var t1 = performance.now()
 
   if(length==0){ // if array is empty, stop and return
     return (performance.now() - t1);
   }
-  var temp = arr[Math.floor(length/2)];
+  var temp = arr[target];
   return (performance.now() - t1);
 }
 
@@ -175,8 +179,8 @@ function arraySearch(length){ // create arraay with size length and measure the 
     return (performance.now() - t1);
   }
 
-  for(var j = 0; j < length-1; j++){
-    if(arr[j]==target){
+  for(var j = 0; j < arr.length; j++){
+    if(arr[j] == target){
       return (performance.now() - t1);
     }
   }

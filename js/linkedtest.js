@@ -17,11 +17,9 @@ class LinkedList{
       return;
     else{
       var current = this.head;
-      var currInd = 0;
-      while(currInd < index){
-        currInd++;
+      for(var i = 0; i < index; i++)
         current = current.next;
-      }
+      
       return current.data;
     }
   }
@@ -94,11 +92,9 @@ class LinkedList{
 
   find(val){ // traverse through linked list and search for val. If val is found, return index of node. Otherwise, return -1.
     var current = this.head;
-    var currIndex = 0;
-    while(current != null){
+    for (var i = 0; i < this.size; i++){
       if(current.data == val)
-        return currIndex;
-      currIndex++;
+        return i;
       current = current.next;
     }
     return -1;
@@ -115,6 +111,7 @@ class LinkedList{
   }
 }
 function initialize(){
+  ran = [false, false];
   pointsnum = 10; // # of points we want on our graph
   xAxisLabels = []
   for(var i = 0; i <= pointsnum; i++)
@@ -164,10 +161,11 @@ function linkedGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(linkedAccess(i*100000).toFixed(5));
 
-      if(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
+      if(!ran[0]){// ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(linkedAccess(i*100000).toFixed(5));
+        ran[0] = true;
       }
 
       document.getElementById("linkedexp").innerHTML = "In a linked list, only the head node can be accessed directly. In order to access any node after the head, the list must be traversed through until the target index is reached. This means the farther away from the head the target node is, the longer it will take to access it. This function's average run time will increase as the linked list's size increases.";
@@ -179,10 +177,11 @@ function linkedGraph(num){
       for(var i = 0; i <= pointsnum; i++)
         times.push(linkedSearch(i*100000).toFixed(5));
 
-      if(times[1] > times[3] * 2){// ignore dataset where runtime for 100000 is unnaturally high 
+      if(!ran[1]){// ignore dataset where runtime for 100000 is unnaturally high 
         times = [];
         for(var i = 0; i <= pointsnum; i++)
           times.push(linkedSearch(i*100000).toFixed(5));
+        ran[1] = true;
       }
 
       document.getElementById("linkedexp").innerHTML = "The nodes within a linked list are not ordered based on their values. In order to find a node containing a specific value within a linked list, the only method is to traverse through the list checking each node until either the target is found or the end of the list is reached. Like access, this function will take longer if the target is far away from the head. Thus, the average runtime of linked list searches will scale along with the list's size."
@@ -272,9 +271,13 @@ function linkedAccess(length){ // create linked list with length nodes and measu
   for(var i = 1; i <= length; i++)
     lst.add(i);
   
-
+  var target = Math.floor(length/2);
   var t1 = performance.now();
-  var temp = lst.get(Math.floor(length/2));
+  
+  if(length == 0)
+    return (performance.now() - t1);
+
+  var temp = lst.get(target);
   return (performance.now() - t1);
 }
 
@@ -283,9 +286,13 @@ function linkedSearch(length){ // create linked list with length nodes and measu
   for(var i = 1; i <= length; i++)
     lst.add(i);
   
-
+  var target = Math.floor(length/2);
   var t1 = performance.now();
-  var temp = lst.find(Math.floor(length/2));
+
+  if(length == 0)
+    return (performance.now() - t1);
+  
+  var temp = lst.find(target);
   return (performance.now() - t1);
 }
 
