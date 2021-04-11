@@ -57,7 +57,7 @@ function initialize(){
                 },
                 scaleLabel: {
                 display: true,
-                labelString: 'Runtime (milliseconds)'
+                labelString: 'Runtime (microseconds)'
                 }
             }],
             xAxes: [{
@@ -79,6 +79,7 @@ function hashGraph(num){
         lab = "Access"
         /*for(var i = 0; i <= pointsnum; i++)
             times.push(hashAccess(i*10000).toFixed(5));*/
+        times = [0.0, 0.0433, 0.0427, 0.049, 0.0341, 0.0361, 0.0364, 0.0366, 0.0363, 0.0363, 0.0357];
         document.getElementById("hashexp").innerHTML = "Once the hash value has been calculated from a key, accessing the value stored in the corresponding bucket is quick and simple. This function's runtime will not be affected by the amount of entries in the table as we can directly access any bucket provided its hash value.";
         break;
 
@@ -86,8 +87,8 @@ function hashGraph(num){
         lab = "Search"
         /*for(var i = 0; i <= pointsnum; i++)
             times.push(hashSearch(i*10000).toFixed(5));*/
-        times = [0.0, 0.0433, 0.0427, 0.049, 0.0341, 0.0361, 0.0364, 0.0366, 0.0363, 0.0363, 0.0357];
-        document.getElementById("hashexp").innerHTML = "Searching for a value within a hash table only requires the computing of its hash value from its key. This search time depends on how complex its hash function is. A complex hash function will naturally take more time to compute the hash value for a key while a simple hash function will take less. Either way, search time is not affected by the hash table's size unless collisions occur.";
+        times = [0.0, 0.0417, 0.0423, 0.0463, 0.0422, 0.0368, 0.0359, 0.0424, 0.0427, 0.045, 0.0349];
+        document.getElementById("hashexp").innerHTML = "Searching for a value within a hash table only requires the computing of its hash value from its key and checking if there exists a corresponding value in the specified bucket. This search time depends on how complex its hash function is. A complex hash function will naturally take more time to compute the hash value for a key while a simple hash function will take less. Either way, search time is not affected by the hash table's size unless collisions occur.";
         break;
 
         case 3:
@@ -135,7 +136,7 @@ function hashGraph(num){
                     },
                     scaleLabel: {
                     display: true,
-                    labelString: 'Runtime (milliseconds)'
+                    labelString: 'Runtime (microseconds)'
                     }
                 }],
                 xAxes: [{

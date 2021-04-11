@@ -45,7 +45,7 @@ function initialize(){
             yAxes: [{
                 ticks: {
                     suggestedMin: 0,
-                    suggestedMax: 1400
+                    suggestedMax: 2000
                 },
                 scaleLabel: {
                 display: true,
@@ -164,7 +164,7 @@ function stackGraph(num){
                 yAxes: [{
                     ticks: {
                         suggestedMin: 0,
-                        suggestedMax: 1400
+                        suggestedMax: 2000
                     },
                     scaleLabel: {
                     display: true,

@@ -22,7 +22,7 @@ function initialize(){
           yAxes: [{
               ticks: {
                   suggestedMin: 0,
-                  suggestedMax: 30
+                  suggestedMax: 50
               },
               scaleLabel: {
                 display: true,
@@ -138,7 +138,7 @@ function arrayGraph(num){
         yAxes: [{
             ticks: {
                 suggestedMin: 0,
-                suggestedMax: 30
+                suggestedMax: 50
             },
             scaleLabel: {
               display: true,

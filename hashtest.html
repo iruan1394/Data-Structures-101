@@ -48,13 +48,13 @@
           <h2><b><u>Notes: </u></b></h2>
           <br>
           <ul>
-            <li>Outliers may appear in graphs due to performance spikes. Run tests multiple times to get a better view of the actual time efficiencies of the data structure.</li>
-            <br>
-            <li>Measured times are rounded to the nearest hundred thousandth's place with excess 0's removed. It is possible for a function's runtime to be shown as 0 if it's too small.</li>
+            <li>Data shown is the average runtime out of 1000 calls of the specified function in Java. The test files used can be found <a href = "https://github.com/iruan1394/Data-Structures-101">here</a>.</li>
             <br>
             <li>The hash tables used in these tests are populated such that collisions don't occur.</li>
             <br>
-            <li>Access and Search are done using a key that returns a hash value in the middle of the table, but the runtime will be the same for any key.</li>
+            <li>Hash table accessing is done using keys rather than indexes. The key used in testing was an arbitrary one in the table.</li>
+            <br>
+            <li>Searching is also done using an arbitrary key within the table; the runtime will be the same regardless of the key used.</li>
             <br>
             <li>Hash tables do not allow for insertions or deletions at specific positions within it such as the beginning or end. When a key value pair is inserted to a hash table, the position the value is stored in will depend on the hash value generated from the key.</li>
           </ul>
@@ -62,6 +62,8 @@
           <div class = "row filler"></div>
           <div class = "row">
             <div class="col-sm-3"> 
+              <br>
+              <div><button onclick = "hashGraph(1);" class = "center testbutton">Access</button></div>
               <br>
               <div><button onclick = "hashGraph(2);" class = "center testbutton">Search</button></div>
               <br>

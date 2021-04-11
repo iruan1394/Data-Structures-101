@@ -47,7 +47,7 @@ function initialize(){
             yAxes: [{
                 ticks: {
                     suggestedMin: 0,
-                    suggestedMax: 1200
+                    suggestedMax: 2000
                 },
                 scaleLabel: {
                 display: true,
@@ -166,7 +166,7 @@ function queueGraph(num){
                 yAxes: [{
                     ticks: {
                         suggestedMin: 0,
-                        suggestedMax: 1200
+                        suggestedMax: 2000
                     },
                     scaleLabel: {
                     display: true,

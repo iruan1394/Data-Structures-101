@@ -134,7 +134,7 @@ function initialize(){
         yAxes: [{
             ticks: {
                  suggestedMin: 0,
-                suggestedMax: 100
+                suggestedMax: 200
             },
             scaleLabel: {
               display: true,
@@ -248,7 +248,7 @@ function linkedGraph(num){
         yAxes: [{
             ticks: {
                 suggestedMin: 0,
-                suggestedMax: 100
+                suggestedMax: 200
             },
             scaleLabel: {
               display: true,

@@ -48,13 +48,15 @@
           <h2><b><u>Notes: </u></b></h2>
           <br>
           <ul>
-            <li>Outliers may appear in graphs due to performance spikes. Run tests multiple times to get a better view of the actual time efficiencies of the data structure.</li>
+            <li>Data shown is the average runtime out of 1000 calls of the specified function in Java. The test files used can be found <a href = "https://github.com/iruan1394/Data-Structures-101">here</a>.</li>
             <br>
-            <li>Measured times are rounded to the nearest hundred thousandth's place with excess 0's removed. It is possible for a function's runtime to be shown as 0 if it's too small.</li>
+            <li>Times measured for BST's are shown in nanoseconds instead of microseconds.</li>
             <br>
-            <li>Access and Search are done in average case where the target element is right in the middle of the structure.</li>
+            <li>All binary search trees used in testing are balanced.</li>
             <br>
-            <li>Binary Search Trees do not allow for insertions or deletions at specified positions. When a node is inserted, its position depends on its value relative to other nodes in the tree. As for deletions, trees do not store nodes in indexes so it is impossible to input the position of a target node. Instead, you have to input its value.</li>
+            <li>There is no way to access a node within a binary search tree by inputting its position. This is because trees do not assign indexes to nodes.</li>
+            <br>
+            <li>Insertion is performed using a node with a value greater than any existing node in the tree. Deletion and Search is performed on the node with the greatest value in the tree which is a leaf.</li>
           </ul>
           <br>
           <div class = "row filler"></div>

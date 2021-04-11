@@ -1,4 +1,4 @@
-class Node{
+/*class Node{
     constructor(value){
         this.data = value;
         this.left = null;
@@ -108,13 +108,13 @@ class BinarySearchTree{
             this.preorder(node.right);
         }
     }
-}
+}*/
 
 function initialize(){
     pointsnum = 10; // # of points we want on our graph
     xAxisLabels = []
     for(var i = 0; i <= pointsnum; i++)
-        xAxisLabels.push(i*100000)
+        xAxisLabels.push(i*10000)
 
     myChart = new Chart(document.getElementById("line-chart"), {
         type: 'line',
@@ -133,11 +133,11 @@ function initialize(){
             yAxes: [{
                 ticks: {
                     suggestedMin: 0,
-                    suggestedMax: 3
+                    suggestedMax: 1000
                 },
                 scaleLabel: {
                 display: true,
-                labelString: 'Runtime (milliseconds)'
+                labelString: 'Runtime (nanoseconds)'
                 }
             }],
             xAxes: [{
@@ -181,23 +181,56 @@ function bstGraph(num){
 
         case 2:
         lab = "Search"
-        for(var i = 0; i <= pointsnum; i++)
-            times.push(bstSearch(i*100000).toFixed(5));
-        document.getElementById("bstexp").innerHTML = "";
+        /*for(var i = 0; i <= pointsnum; i++)
+            times.push(bstSearch(i*100000).toFixed(5));*/
+        times = [0.0,
+            435.9,
+            484.5,
+            487.1,
+            513.0,
+            514.0,
+            517.7,
+            546.6,
+            547.8,
+            548.4,
+            551.8];
+        document.getElementById("bstexp").innerHTML = "Because binary search trees store nodes in order based on their values, searching can be done more efficiently by navigating through the tree and comparing node values to the target's. While the runtime of BST searching does scale with the tree's size, it is still far more efficient than blind searches in other data structures as long as the tree is balanced. The former has a logarithmic time complexity while the latter has a linear one. ";
         break;
 
         case 3:
         lab = "Insertion"
-        for(var i = 0; i <= pointsnum; i++)
-            times.push(bstSearch(i*100000).toFixed(5));
-        document.getElementById("bstexp").innerHTML = "";
+        /*for(var i = 0; i <= pointsnum; i++)
+            times.push(bstSearch(i*100000).toFixed(5));*/
+        times = [0.0,
+            460.6,
+            493.7,
+            503.4,
+            509.4,
+            510.3,
+            512.0,
+            535.9,
+            541.8,
+            542.2,
+            544.7];
+            document.getElementById("bstexp").innerHTML = "When a node is inserted into a tree, its position is determined by its value compared to the nodes already within the tree. In order to calculate this position, it is necessary to traverse the tree in the same manner as searching. As such, the runtime of BST insertion will also scale with the tree's size and take logarithmic time. However, if the tree is very unbalanced, insertion time complexity may be closer to linear time.";
         break;
 
         case 4:
         lab = "Deletion"
-        for(var i = 0; i <= pointsnum; i++)
-            times.push(bstDelete(i*100000).toFixed(5));
-        document.getElementById("bstexp").innerHTML = "";
+        /*for(var i = 0; i <= pointsnum; i++)
+            times.push(bstDelete(i*100000).toFixed(5));*/
+        document.getElementById("bstexp").innerHTML = "Deleting a node from a binary search tree is quite a complicated process. First the target node must be found within the tree and navigated to, as it is impossible to directly access it. Then, different actions need to be taken depending on how many children the target has. If the target is a leaf, it can just be deleted. If the target has 1 child, it needs to be replaced by that child. If the target has 2 children, then it needs to be replaced by the smallest node in its right subtree. These processes all have runtimes that scale with tree size and have logarithmic time complexity.";
+        times = [0.0,
+            476.2,
+            506.5,
+            508.8,
+            522.1,
+            522.5,
+            525.0,
+            551.2,
+            551.2,
+            551.6,
+            554.5];
         break;
 
         default:
@@ -225,11 +258,11 @@ function bstGraph(num){
                 yAxes: [{
                     ticks: {
                         suggestedMin: 0,
-                        suggestedMax: 3
+                        suggestedMax: 1000
                     },
                     scaleLabel: {
                     display: true,
-                    labelString: 'Runtime (milliseconds)'
+                    labelString: 'Runtime (nanoseconds)'
                     }
                 }],
                 xAxes: [{
@@ -243,7 +276,7 @@ function bstGraph(num){
     });
 }
 
-function bstSearch(length){
+/*function bstSearch(length){
     var arr = [];
     var t = new BinarySearchTree();
     for(var i = 1; i <= length; i++)
@@ -289,4 +322,4 @@ function bstDelete(length){
     t.remove(Math.floor(length/2));
 
     return ((performance.now() - t1));
-}
+}*/
