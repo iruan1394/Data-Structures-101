@@ -1,4 +1,4 @@
-class Queue{
+/*class Queue{
     constructor(){
         this.data = [];
     }
@@ -21,7 +21,7 @@ class Queue{
             return null;
         return this.data[0];
     }
-}
+}*/
 
 function initialize(){
     ran = [false, false, false, false];
@@ -47,11 +47,11 @@ function initialize(){
             yAxes: [{
                 ticks: {
                     suggestedMin: 0,
-                    suggestedMax: 3
+                    suggestedMax: 1200
                 },
                 scaleLabel: {
                 display: true,
-                labelString: 'Runtime (milliseconds)'
+                labelString: 'Runtime (microseconds)'
                 }
             }],
             xAxes: [{
@@ -71,67 +71,73 @@ function queueGraph(num){
     switch(num) {
         case 1:
         lab = "Access"
-        for(var i = 0; i <= pointsnum; i++)
+        /*for(var i = 0; i <= pointsnum; i++)
             times.push(queueAccess(i*1000).toFixed(5));
         if(!ran[0]){ // ignore dataset from first run
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(queueAccess(i*1000).toFixed(5));
             ran[0] = true;    
-        }
+        }*/
+        times = [0.0, 82.6759, 186.1964, 283.476, 369.717, 481.483, 571.504, 663.0352, 794.9924, 908.0341, 967.0762];
         document.getElementById("queueexp").innerHTML = "Accessing the front element of queue will always take the same amount of time no matter how large the queue becomes. However, in order to access any other element within the queue, every element in front of it needs to be dequeued and then enqueued. Once the access is performed, more enqueuing and dequeuing needs to be done until the elements are in their original order. This process will take longer as the queue grows in size as more elements will need to be rearranged.";
         break;
 
         case 2:
         lab = "Search"
-        for(var i = 0; i <= pointsnum; i++)
+        /*for(var i = 0; i <= pointsnum; i++)
             times.push(queueSearch(i*1000).toFixed(5));
         if(!ran[1]){ // ignore dataset from first run
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(queueSearch(i*1000).toFixed(5));
             ran[0] = true;    
-        }
+        }*/
+        times = [0.0, 78.299499, 180.627497, 289.857104, 405.554203, 504.856198, 597.375999, 675.794801, 796.791499, 915.182005, 1068.001702];
         document.getElementById("queueexp").innerHTML = "Queues do not sort their elements in any particular order. In order to find a specific element, the only method available is to blindly go through the queue until either the target is found or all elements have been checked. This is done by continously checking the front element, dequeuing it, and then enqueuing. Even after the target's been found, the queue must be returned to its original state. This process scales along with the queue's size since there would be more elements that need to be checked.";
         break;
 
         case 3:
         lab = "Front Insertion"
-        for(var i = 0; i <= pointsnum; i++)
+        /*for(var i = 0; i <= pointsnum; i++)
             times.push(queueFInsert(i*1000).toFixed(5));
         if(!ran[2]){ // ignore dataset from first run
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(queueFInsert(i*1000).toFixed(5));
             ran[0] = true;    
-        }
+        }*/
+        times = [0.0, 86.147685, 157.961085, 239.818392, 329.63959, 436.19121, 493.360039, 569.079312, 634.243917, 753.906779, 862.520809];
         document.getElementById("queueexp").innerHTML = "Standard queues only allow for direct insertion at its back. In order to insert an element at the front of a queue, it must first be inserted at the back. Then, every element in front of it must be dequeued and enqueued back in. This process will take longer if the queue has a lot of elements so its runtime scales with queue size. Of course, this doesn't apply to deques which allow for direct insertion at the front.";
         break;
 
         case 4:
         lab = "Back Insertion"
-        for(var i = 0; i <= pointsnum; i++)
-            times.push(queueBInsert(i*1000).toFixed(5));
+        /*for(var i = 0; i <= pointsnum; i++)
+            times.push(queueBInsert(i*1000).toFixed(5));*/
+        times = [0.0, 0.042198, 0.041998, 0.045697, 0.042103, 0.043403, 0.047094, 0.046001, 0.047997, 0.042398, 0.048299];
         document.getElementById("queueexp").innerHTML = "In order to insert an element at the back of a queue, it just needs to be enqueued. Enqueuing is fast, and its runtime is not affected by the number of elements within the queue.";    
         break;
 
         case 5:
         lab = "Front Deletion"
-        for(var i = 0; i <= pointsnum; i++)
-            times.push(queueFDelete(i*1000).toFixed(5));
+        /*for(var i = 0; i <= pointsnum; i++)
+            times.push(queueFDelete(i*1000).toFixed(5));*/
+        times = [0.0, 0.0856, 0.0925, 0.1045, 0.0969, 0.1328, 0.0785, 0.1086, 0.0802, 0.0924, 0.0814];
         document.getElementById("queueexp").innerHTML = "Similar to back insertion, queues allow for direct deletion from the front. This is done by simply running a dequeue. The dequeue function is fast and will always take the same amount of time regardless of the queue's size.";   
         break;
 
         case 6:
         lab = "Back Deletion"
-        for(var i = 0; i <= pointsnum; i++)
+        /*for(var i = 0; i <= pointsnum; i++)
             times.push(queueBDelete(i*1000).toFixed(5));
         if(!ran[3]){ // ignore dataset from first run
             times = [];
             for(var i = 0; i <= pointsnum; i++)
                 times.push(queueBDelete(i*1000).toFixed(5));
             ran[0] = true;    
-        }
+        }*/
+        times = [0.0, 84.8623, 188.4329, 279.5859, 323.941, 428.1652, 507.9609, 624.4959, 708.423, 789.0045, 822.1764];
         document.getElementById("queueexp").innerHTML = "While deleting from the front of a queue is fast and simple, deleting from any other position is not. Every element in front of the target position will need to be dequeued and enqueued to put the target at the front. Once the deletion is done, more enqueuing and dequeuing needs to be done to put the elements in their original order. Deleting from the back of the queue will scale along with the queue's size since more elements will need to be rearranged. Doesn't apply to deques which allow for direct back deletion.";   
         break;  
         
@@ -160,11 +166,11 @@ function queueGraph(num){
                 yAxes: [{
                     ticks: {
                         suggestedMin: 0,
-                        suggestedMax: 3
+                        suggestedMax: 1200
                     },
                     scaleLabel: {
                     display: true,
-                    labelString: 'Runtime (milliseconds)'
+                    labelString: 'Runtime (microseconds)'
                     }
                 }],
                 xAxes: [{
@@ -178,7 +184,7 @@ function queueGraph(num){
     });
 }
 
-function queueAccess(length){ // creates a queue with length elements and accesses the middle element
+/*function queueAccess(length){ // creates a queue with length elements and accesses the middle element
     var q = new Queue();
     for(var i = 1; i <= length; i++)
         q.enqueue(i);
@@ -262,4 +268,4 @@ function queueBDelete(length){ // creates a queue with length elements and remov
     q.dequeue(); // remove the back element, returning queue to original order
 
     return(performance.now() - t1);
-}
+}*/
