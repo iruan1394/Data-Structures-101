@@ -22,11 +22,11 @@ function initialize(){
           yAxes: [{
               ticks: {
                   suggestedMin: 0,
-                  suggestedMax: 3
+                  suggestedMax: 30
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Runtime (milliseconds)'
+                labelString: 'Runtime (microseconds)'
               }
           }],
           xAxes: [{
@@ -38,6 +38,21 @@ function initialize(){
         }
       }
     });
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/tests/arrayAccess.txt", true);
+  xhr.onload = function (e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+      } else {
+        console.error(xhr.statusText);
+      }
+    }
+  };
+  xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+  };
+  xhr.send(null); 
 }
 
 function arrayGraph(num){
@@ -46,14 +61,15 @@ function arrayGraph(num){
   switch(num) {
     case 1:
       lab = "Access"
-      for(var i = 0; i <= pointsnum; i++)
-        times.push(arrayAccess(i*100000).toFixed(5));
+      /*for(var i = 0; i <= pointsnum; i++)
+        times.push(arrayAccess(i*100000).toFixed(5));*/
+      times = [0, 0.049698, 0.050497, 0.050501, 0.0355, 0.039597, 0.035601, 0.0354, 0.034997, 0.036801, 0.0351];
       document.getElementById("arrayexp").innerHTML = "Arrays have a property known as random access. This means that no matter how many elements are within, accessing any index within an array will take the same amount of time. Thus, array accessing will take constant time.";
       break;
 
     case 2:
       lab = "Search"
-      for(var i = 0; i <= pointsnum; i++)
+      /*for(var i = 0; i <= pointsnum; i++)
         times.push(arraySearch(i*100000).toFixed(5));
 
       if(!ran[0]){ // ignore first dataset
@@ -61,8 +77,8 @@ function arrayGraph(num){
         for(var i = 0; i <= pointsnum; i++)
           times.push(arraySearch(i*100000).toFixed(5));
         ran[0] = true;
-      }
-
+      }*/
+      times = [0, 0.817098, 1.529196, 2.308202, 3.000202, 3.694101, 4.4591, 5.187698, 5.944195, 6.712999, 7.815198];
       document.getElementById("arrayexp").innerHTML = "Because arrays do not store their contents in a specific order, the only way to find an element within one is to blindly go through the array until one of two things happen. Either the target is found, or the end of the array has been reached. This process takes longer if the target is near the end of the array or if the array is simply very large. Array search will take increasing time as the array grows."
       break;
 
@@ -134,11 +150,11 @@ function arrayGraph(num){
         yAxes: [{
             ticks: {
                 suggestedMin: 0,
-                suggestedMax: 3
+                suggestedMax: 30
             },
             scaleLabel: {
               display: true,
-              labelString: 'Runtime (milliseconds)'
+              labelString: 'Runtime (microseconds)'
             }
         }],
         xAxes: [{
@@ -259,3 +275,4 @@ function arrayEDelete(length){ // create array with size length and measure the 
   
   return(performance.now()-t1);
 }
+
