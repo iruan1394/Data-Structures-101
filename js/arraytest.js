@@ -49,7 +49,7 @@ function arrayGraph(num){
       /*for(var i = 0; i <= pointsnum; i++)
         times.push(arrayAccess(i*100000).toFixed(5));*/
       times = [0.0, 0.049698, 0.050497, 0.050501, 0.0355, 0.039597, 0.035601, 0.0354, 0.034997, 0.036801, 0.0351];
-      document.getElementById("arrayexp").innerHTML = "Arrays have a property known as random access. This means that no matter how many elements are within, accessing any index within an array will take the same amount of time. Thus, array accessing will take constant time.";
+      document.getElementById("arrayexp").innerHTML = "Arrays have a property known as random access. This means that no matter how many elements the array contains, accessing any index within it will always take the same amount of time.";
       break;
 
     case 2:
@@ -64,7 +64,7 @@ function arrayGraph(num){
         ran[0] = true;
       }*/
       times = [0.0, 0.817098, 1.529196, 2.308202, 3.000202, 3.694101, 4.4591, 5.187698, 5.944195, 6.712999, 7.815198];
-      document.getElementById("arrayexp").innerHTML = "Because arrays do not store their contents in a specific order, the only way to find an element within one is to blindly go through the array until one of two things happen. Either the target is found, or the end of the array has been reached. This process takes longer if the target is near the end of the array or if the array is simply very large. Array search will take increasing time as the array grows."
+      document.getElementById("arrayexp").innerHTML = "Because arrays do not store their contents in any order, the only way to find a specific element within one is to blindly traverse the array until one of two things happen. Either the target is found, or the end of the array is reached. This process will take longer if the target is near the end of the array or if the array is simply very large. As the size of the array grows, more elements will need to be checked."
       break;
 
     case 3:
@@ -79,7 +79,7 @@ function arrayGraph(num){
         ran[1] = true;
       }*/
       times = [0.0, 2.531801, 5.036515, 8.146004, 11.1773, 12.648608, 15.239898, 17.914992, 20.591294, 23.250892, 25.868113];
-      document.getElementById("arrayexp").innerHTML = "In order to insert an element into an array at a position that's not the last, the element that was originally at that position and every element after it need to be shifted forward. This is an extremely cumbersome process and scales with the array's size."
+      document.getElementById("arrayexp").innerHTML = "In order to insert an element into an array at a position that's not the last, the element that was originally at that position, as well as every element after it, needs to be shifted forward to make room. This is an extremely cumbersome process, and if the array is very large, more elements will need to be moved."
       break;
 
     case 4:
@@ -87,7 +87,7 @@ function arrayGraph(num){
       /*for(var i = 0; i <= pointsnum; i++)
         times.push(arrayEInsert(i*100000).toFixed(5));*/
       times = [0.0, 0.0307, 0.032695, 0.029196, 0.033898, 0.032601, 0.0318, 0.033902, 0.031399, 0.033098, 0.0325];
-      document.getElementById("arrayexp").innerHTML = "Inserting at an end of an array is a much simpler process than inserting at any other position. There is no shifting of elements that needs to be done. As a result, array end insertion will not be affected by the array's size and will take constant time."
+      document.getElementById("arrayexp").innerHTML = "Inserting at an end of an array is a much simpler process than inserting at any other position. This is because no elements need to be shifted prior to inserting. As a result, the runtime of array end insertion will remain the same regardless of the array's size."
       break;
 
     case 5:
@@ -102,7 +102,7 @@ function arrayGraph(num){
         ran[2] = true;
       }*/
       times = [0.0, 2.570889, 5.045929, 8.390601, 10.070499, 12.833178, 15.271706, 17.983911, 20.948801, 22.91327, 25.337944];
-      document.getElementById("arrayexp").innerHTML = "Removing an element from an array is quite costly when the target's position is not the last. After the element has been deleted, every element positioned after it needs to be shifted back to fill in the gap. Similar to front insertion, array front deletion will take more time as arraay size increases."
+      document.getElementById("arrayexp").innerHTML = "Removing an element from an array is quite costly when the target's position is not the last. After the element has been removed, every element positioned after it needs to be shifted back to fill in the gap. Similar to front insertion, array front deletion will take more time as array size increases since more elements will need to be shifted back."
       break;
 
     case 6:
@@ -110,7 +110,7 @@ function arrayGraph(num){
       /*for(var i = 0; i <= pointsnum; i++)
         times.push(arrayEDelete(i*100000).toFixed(5));*/
       times = [0.0, 0.031504, 0.032702, 0.031397, 0.034001, 0.034998, 0.033, 0.034401, 0.031798, 0.031599, 0.032999];
-      document.getElementById("arrayexp").innerHTML = "Similar to end insertion, end deletion of an array does not require much work. Since there are no elements that come after it, there is no need to do any shifting. Thus, this function's runtime will be unaffected by the array's size and take constant time."
+      document.getElementById("arrayexp").innerHTML = "Similar to end insertion, array end deletion does not require much work. Since there are no elements that come after the element being deleted, there is no need to do any shifting. Thus, this function's runtime will be unaffected by the array's size and will remain constant."
       break;  
       
     default:

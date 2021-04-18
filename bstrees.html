@@ -66,7 +66,7 @@
               <ul>
                 <li><b>A parent node can only have at most 2 children: a left child and a right child.</b></li>
                 <br>
-                <li><b>The left subtree of a node can only contain values less said node's.</b></li>
+                <li><b>The left subtree of a node can only contain values less that said node's.</b></li>
                 <br>
                 <li><b>The right subtree of a node can only contain values greater than said node's.</b></li>
               </ul>
@@ -100,7 +100,7 @@
           <h4>• <b><u>Efficient Insertion and Deletion</u></b></h4>
           <p class = "indented">When a node is inserted into a binary search tree, it will always be inserted as a leaf. The only work that needs to be done is calculating what the parent node should be 
           and altering it to point to the inserted node. The former action is done by traversing the tree in the same manner used to perform searches. The speed at which this is done depends on the height of the tree and how unbalanced the tree is.
-          The latter action can be done instantly regardless of the tree's size or structure. All that needs to be done is altering the target leaf so that it points to the newly inserted node</p>
+          The latter action can be done instantly regardless of the tree's size or structure. All that needs to be done is altering an existing node to point to the newly inserted node</p>
           <br>
           <p class = "indented">As for deletion, the actions needed to be taken depends on the its status of the target node. If it is a leaf, then all that needs to be done is altering its parent so that it no longer points to the target. If the target node is a parent
             with a single child, then that child must replace it. If the target is a parent with 2 children, then it must be replaced by the smallest node in its right subtree. The time needed to find this node depends on the height of the subtree and how unbalanced the subtree is. The actual replacement 
