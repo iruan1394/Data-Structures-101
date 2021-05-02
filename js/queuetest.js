@@ -80,7 +80,7 @@ function queueGraph(num){
             ran[0] = true;    
         }*/
         times = [0.0, 82.6759, 186.1964, 283.476, 369.717, 481.483, 571.504, 663.0352, 794.9924, 908.0341, 967.0762];
-        document.getElementById("queueexp").innerHTML = "Accessing the front element of queue will always take the same amount of time no matter how large the queue becomes. However, in order to access any other element within the queue, every element in front of it needs to be dequeued and then enqueued. Once the access is performed, more enqueuing and dequeuing needs to be done until the elements are in their original order. This process will take longer as the queue grows in size as more elements will need to be rearranged.";
+        document.getElementById("queueexp").innerHTML = "Accessing an element at one of the ends of a queue will always take the same amount of time no matter how large the queue becomes. However, in order to access any other element within the queue, every element in front of it needs to be dequeued and then enqueued. Once the access is performed, more enqueuing and dequeuing needs to be done until the elements are in their original order. This process will take longer as the queue grows in size as more elements will need to be rearranged.";
         break;
 
         case 2:
@@ -94,7 +94,7 @@ function queueGraph(num){
             ran[0] = true;    
         }*/
         times = [0.0, 78.299499, 180.627497, 289.857104, 405.554203, 504.856198, 597.375999, 675.794801, 796.791499, 915.182005, 1068.001702];
-        document.getElementById("queueexp").innerHTML = "Queues do not sort their elements in any particular order. In order to find a specific element, the only method available is to blindly go through the queue until either the target is found or all elements have been checked. This is done by continously checking the front element, dequeuing it, and then enqueuing. Even after the target's been found, the queue must be returned to its original state. This process scales along with the queue's size since there would be more elements that need to be checked.";
+        document.getElementById("queueexp").innerHTML = "Queues do not sort their elements in any particular order. In order to find a specific element, the only method available is to blindly go through the queue until either the target is found or all elements have been checked. This is done by continously checking the front element, dequeuing it, and then enqueuing. Even after the target's been found, the queue must be returned to its original state. This process's runtime scales along with the queue's size since there would be more elements that need to be checked.";
         break;
 
         case 3:
@@ -138,7 +138,7 @@ function queueGraph(num){
             ran[0] = true;    
         }*/
         times = [0.0, 84.8623, 188.4329, 279.5859, 323.941, 428.1652, 507.9609, 624.4959, 708.423, 789.0045, 822.1764];
-        document.getElementById("queueexp").innerHTML = "While deleting from the front of a queue is fast and simple, deleting from any other position is not. Every element in front of the target position will need to be dequeued and enqueued to put the target at the front. Once the deletion is done, more enqueuing and dequeuing needs to be done to put the elements in their original order. Deleting from the back of the queue will scale along with the queue's size since more elements will need to be rearranged. Doesn't apply to deques which allow for direct back deletion.";   
+        document.getElementById("queueexp").innerHTML = "While deleting from the front of a queue is fast and simple, deleting from any other position is not. Every element in front of the target position will need to be dequeued and enqueued to put the target at the front. Once the deletion is done, more enqueuing and dequeuing needs to be done to put the elements in their original order. Deleting from the back of the queue will scale along with the queue's size since more elements will need to be rearranged. This doesn't apply to deques which allow for direct back deletion.";   
         break;  
         
         default:

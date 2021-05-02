@@ -2,8 +2,9 @@ package com.company;
 
 import java.io.FileWriter;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
-public class TreeTest {
+public class Main {
     static int tries = 1000;
     public static void main(String[] args) {
         try {
@@ -25,8 +26,6 @@ public class TreeTest {
                         times[i] = treeSearch(i * 10000);
                         if(i == 1 || i == times.length - 1)
                             times[i] = treeSearch(i * 10000);
-                        while(i > 0 && times[i] > times[i-1])
-                            i-=2;
                     }
                     w = new FileWriter("treeSearch.txt");
                     for(int j = 0; j < times.length; j++)
@@ -85,7 +84,7 @@ public class TreeTest {
             sum += System.nanoTime() - start;
         }
 
-        return sum/(tries * 1000);
+        return sum/(tries);
     }
 
     public static double treeInsert(int size){
@@ -108,7 +107,7 @@ public class TreeTest {
             t.remove(size+1);
         }
 
-        return sum/(tries * 1000);
+        return sum/(tries);
     }
 
     public static double treeDelete(int size){
@@ -131,7 +130,7 @@ public class TreeTest {
             t.insert(size);
         }
 
-        return sum/(tries * 1000);
+        return sum/(tries);
     }
 }
 
@@ -175,6 +174,7 @@ class BinarySearchTree{
         Node curr = this.root;
 
         while(curr != null){
+            double temp = System.nanoTime();
             if(v < curr.value)
                 curr = curr.left;
             else if (v > curr.value)
@@ -193,6 +193,7 @@ class BinarySearchTree{
         else{
             Node curr = this.root;
             while(curr != null){
+                double temp = System.nanoTime();
                 if(n.value < curr.value){
                     if(curr.left == null) {
                         curr.left = n;
@@ -218,6 +219,7 @@ class BinarySearchTree{
     }
 
     Node removeNode(Node n, int v){
+        double start = System.nanoTime();
         if (n == null)
             return null;
         else if (v < n.value){

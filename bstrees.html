@@ -47,14 +47,14 @@
         <div class="col-sm-8 column text-left"> 
           <h1><b><u>What is a Binary Search Tree?</u></b></h1>
           <br>
-          <p>A binary search tree is part of a family of data structures known as <b>trees</b>. Trees, like linked lists, store data as a collection of containers called <b>nodes</b>. However, the nodes of a tree are completely different from those of a linked list.
-          Tree nodes are organized using parent-child relationships, where nodes points down to one or more other nodes. A node pointing down to another is known as a <b>parent</b> while the node it is pointing down is known as a <b>child</b>. Nodes that share the same parent are known as <b>siblings</b>.
+          <p>A binary search tree is part of a family of data structures known as <b>trees</b>. Trees, like <a href = "linkedlists.html">linked lists</a>, store data as a collection of containers called <b>nodes</b>. However, the nodes of a tree are completely different from those of a linked list.
+          Tree nodes are organized using parent-child relationships, where nodes points down to one or more other nodes. A node pointing down to another is known as a <b>parent</b> while the node it is pointing down is known as its <b>child</b>. Nodes that share the same parent are called <b>siblings</b>.
           Note that while a parent node can have multiple children, a child node can only have one parent. The node at the very top of a tree has no parent and is called a <b>root</b>. Nodes with no children are known as <b>leaves</b> and are usually found at the bottom. A <b>subtree</b> of a node is a tree made up of one of its children and all of that child's descendants.
           The <b>height</b> of a tree is the distance from the root node to the bottom-most leaf node.</p>
           <br>
           <div>
             <img class= "center" src = "images/bstree1.jpg"></img>
-            <div class = "caption">A basic tree with a height of 3</div>
+            <div class = "caption">A basic tree with a height of 3 (Tutorialspoint)</div>
           </div>
           <br>
           <br>
@@ -78,7 +78,7 @@
           </div>
           <br>
           <p>A binary search tree can either be <b>balanced</b> or <b>unbalanced</b>. In a balanced binary search tree, the heights of the subtrees of any node must not differ by more than 1. This ensures that the overall height of the binary search tree is kept to a minimum, which is needed for optimal performance. In an unbalanced 
-          binary search tree, a node can have subtrees with wildly different heights. In the worse case scenario, each parent may only have 1 child node leading to a tree that essentially functions as a linked list. This is known as a <b>degenerate</b> tree and is highly undesirable.</p>
+          binary search tree, a node can have subtrees with wildly different heights. In the worse case scenario, each parent may only have 1 child node leading to a tree that essentially functions as a linked list. This is known as a <b>degenerate</b> tree and is highly undesirable. The speeds at which operations are performed will be the same as those of a linked list.</p>
           <br>
           <div>
             <img class= "center" src = "images/bstree3.png"></img>
@@ -100,9 +100,9 @@
           <h4>• <b><u>Efficient Insertion and Deletion</u></b></h4>
           <p class = "indented">When a node is inserted into a binary search tree, it will always be inserted as a leaf. The only work that needs to be done is calculating what the parent node should be 
           and altering it to point to the inserted node. The former action is done by traversing the tree in the same manner used to perform searches. The speed at which this is done depends on the height of the tree and how unbalanced the tree is.
-          The latter action can be done instantly regardless of the tree's size or structure. All that needs to be done is altering an existing node to point to the newly inserted node</p>
+          The latter action can be done instantly regardless of the tree's size or structure.</p>
           <br>
-          <p class = "indented">As for deletion, the actions needed to be taken depends on the its status of the target node. If it is a leaf, then all that needs to be done is altering its parent so that it no longer points to the target. If the target node is a parent
+          <p class = "indented">As for deletion, the actions taken depend on the status of the target node. If it is a leaf, then all that needs to be done is altering its parent so that it no longer points to the target. If the target node is a parent
             with a single child, then that child must replace it. If the target is a parent with 2 children, then it must be replaced by the smallest node in its right subtree. The time needed to find this node depends on the height of the subtree and how unbalanced the subtree is. The actual replacement 
             can be done instantly regardless of the tree's size and structure.</p>
           <br>

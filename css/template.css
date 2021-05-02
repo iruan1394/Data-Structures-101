@@ -41,19 +41,14 @@ p a{
 .question {
     font-weight: bold;
 }
-.option{
+.option, .result{
     font-weight: normal;
     vertical-align: middle; 
-    font-size: 1.9rem;
-}
-.result{
-    font-weight: normal;
-    vertical-align: middle; 
-    font-size: 1.9rem;
+    font-size: 1.8rem;
 }
 .input{
     transform: scale(1.2); 
-    vertical-align: middle; 
+    vertical-align: text-bottom; 
 }
 .testbutton{
     font-size: 16px;

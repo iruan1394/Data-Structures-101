@@ -220,7 +220,7 @@ function linkedGraph(num){
       /*for(var i = 0; i <= pointsnum; i++)
         times.push(linkedEDelete(i*100000).toFixed(5));*/
       times = [0.0, 0.043003, 0.055198, 0.059903, 0.060999, 0.088798, 0.038402, 0.040198, 0.036601, 0.038103, 0.0401];
-      document.getElementById("linkedexp").innerHTML = "Deleting the tail node of a linked list does not require much work. Once the list has been traversed to the end, all that needs to be done is set the second last node of the list to point to null. That node would become the list's new tail. The original tail would be removed from the list because nothing would point to it. Like front deletion, linked list end deletion takes constant time regardless of the list's size."
+      document.getElementById("linkedexp").innerHTML = "Deleting the tail node of a linked list does not require much work. Once the list has been traversed to the 2nd last node, all that needs to be done is make the node point to null. That node would become the list's new tail. The original tail would be removed from the list because nothing would point to it. Like front deletion, linked list end deletion takes constant time regardless of the list's size."
       break;  
       
     default:

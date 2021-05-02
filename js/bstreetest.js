@@ -219,7 +219,7 @@ function bstGraph(num){
         lab = "Deletion"
         /*for(var i = 0; i <= pointsnum; i++)
             times.push(bstDelete(i*100000).toFixed(5));*/
-        document.getElementById("bstexp").innerHTML = "Deleting a node from a binary search tree is quite a complicated process. First the target node must be found within the tree and navigated to, as it is impossible to directly access it. Then, different actions need to be taken depending on how many children the target has. If the target is a leaf, it can just be deleted. If the target has 1 child, it needs to be replaced by that child. If the target has 2 children, then it needs to be replaced by the smallest node in its right subtree. These processes all have runtimes that scale with tree size and have logarithmic time complexity.";
+        document.getElementById("bstexp").innerHTML = "Deleting a node from a binary search tree is quite a complicated process. First the target node must be found within the tree and navigated to, as it is impossible to directly access it. Then, different actions need to be taken depending on how many children the target has. If the target is a leaf, it can just be deleted. If the target has 1 child, it needs to be replaced by that child. If the target has 2 children, then it needs to be replaced by the smallest node in its right subtree. Because of these processes, tree deletion has a runtime that scale with tree size and have logarithmic time complexity.";
         times = [0.0,
             476.2,
             506.5,

@@ -57,7 +57,7 @@
           <hr>
           <h1><b><u>Why are they Important?</u></b></h1>
           <br>
-          <p>The ability to choose the most suitable data structure for a task is essential to becoming a quality software developer. Data structures are the building blocks of a program, and choosing the wrong ones will cause said program to run extremely inefficiently. Let's say, for example, you have a collection of unordered integer 
+          <p>The ability to choose the most suitable data structure for a task is essential to becoming a quality software developer. Data structures are the building blocks of a program, and choosing the wrong ones will cause said program to run extremely inefficiently. Let's say you have a collection of unordered integer 
           values, and you wish to find the location of a specific one. If you store that data in a structure unsuitable for searching, such as an <a href = "arrays.html">array</a>, you would need go through it blindly, one value at a time, until you find your target. In the worst scenario, you may have to check every value in the array before you succeed.
           This is highly inefficient and can take a very long time if you were working with a large amount of data. However, if you store your data in a structure that's suitable for performing searches, such
           as a <a href = "bstrees.html">binary search tree</a>, fewer elements will need to be checked before you find the target. Consequently, it will take less time to complete the search, making your program run much faster.</p>
@@ -83,11 +83,11 @@
           <ul>
             <li><u><b>Access</b></u>: Given the location of an element within the structure, return that element's value.</li>
             <br>
-            <li><u><b>Search</b></u>: Find a target element within the structure and return its location. If the element cannot be found, return a value that reflects this (usually -1).</li>
+            <li><u><b>Search</b></u>: Find a target element within the structure and, if desired, return its location. If the element cannot be found, return a value that reflects this (usually -1).</li>
             <br>
-            <li><u><b>Insert</b></u>: Add an element to the structure at a specific location within it.</li>
+            <li><u><b>Insert</b></u>: Add an element to the structure. The location it is inserted to may need to be specified.</li>
             <br>
-            <li><u><b>Delete</b></u>: Remove an existing element in the structure given its location.</li>
+            <li><u><b>Delete</b></u>: Remove an existing element in the structure given its location or value.</li>
           </ul>
           <br> 
           <p>We are interested the <b>time complexities</b> of these functions, or how their running times change as the structure's size increases. Will it take longer for these functions to run if the structure contains more data? If so, how much longer? The answers to these questions will reveal what tasks the data structure are suitable and unsuitable for.

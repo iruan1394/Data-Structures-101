@@ -55,7 +55,7 @@
           <br>
           <div>
             <img class= "center" src = "images/hashtable1.png"></img>
-            <div class = "caption">Hash Table containing names and phone numbers (Taken from Wikipedia)</div>
+            <div class = "caption">Hash table containing names and phone numbers (Wikipedia)</div>
           </div>
           <br>
           <p>There are many different kinds of hash functions, especially since keys can be a variety of data types. However, a hash function should ideally have several properties: </p>
@@ -66,37 +66,37 @@
             <li><u><b>Hard to Reverse</b></u>: Given a hash value, it should be extremely difficult or near impossible to calculate the key that outputted it. The output of the hash function should not give any clues as to what the input was.
             This is to ensure that a value cannot be accessed using only the bucket number that its stored in.</li>
             <br>
-            <li><u><b>Collision Resistant</b></u>: When the same hash value is computed from multiple distinct keys, the hash table will attempt to store multiple values in the same bucket. This is known as a <b>collision</b>. Good
+            <li><u><b>Collision Resistant</b></u>: When the same hash value is computed from multiple distinct keys, the hash table will attempt to store multiple values in the same bucket. This is known as a <b>collision</b>. When a collision occurs in a bucket, the speeds at which operations are performed on that bucket drops. Good
             hash functions should ensure that collisions are unlikely to happen. It should also have measures in place to deal with collisions when they do occur. One method is to chain the values in the bucket through the use of a linked list.</li>
             <br>
             <div>
               <img class= "center" src = "images/hashtable2.png"></img>
-              <div class = "caption">Hash Table chaining values in a bucket when a collision occurs (Wikipedia)</div>
+              <div class = "caption">Hash table chaining values in a bucket when a collision occurs (Wikipedia)</div>
             </div>
             <br>
             <li><u><b>Uniform Distribution</b></u>: Hash values should be assigned in an even spread-out manner. When similar keys are inputted into the hash function, the hash values computed should not be close to each other. This would make it easy for someone to guess the key needed to access a specific bucket if they knew the key for a bucket close to the target.
             It would also be likely for collisions to occur if hash values were generated in a concentrated range.</li>
           </ul>
           <br>
-          <p>It has to be noted that the more of these properties that a hash function possesses, the more complicated it may become. Thus, ideal hash functions may take a lot longer to compute than
-          unideal ones. In situations where speed is needed more than security, less effective hash functions may be more appropriate.</p>
+          <p>It has to be noted that the more of these properties a hash function possesses, the more complicated the function will become. Thus, ideal hash functions will take longer to compute hash values than
+          unideal ones. In situations where speed is needed more than security, less effective hash functions will be more appropriate.</p>
           <hr>
           <h1><b><u>What are the Advantages of a Hash Table?</u></b></h1>
           <br>
           <h4>• <b><u>Efficient Searching</u></b></h4>
-          <p class = "indented">In order to find a value within a hash table, the only thing that needs to be done is computing its key's hash value. As long as there were no collisions,
+          <p class = "indented">In order to find a value within a hash table, the only thing that needs to be done is computing its hash value using its key. As long as there are no collisions,
           it will always take the same amount of time to find any value within the table. As a result, hash tables are appropriate for holding large amounts of data with items that need to be searched for. 
           </p>
           <br>
           <h4>• <b><u>Efficient Insertion and Deletion</u></b></h4>
-          <p class = "indented">Adding and removing entries in a hash table will also take the same amount of time regardless of the table's size. As long as no collisions are encountered, all that needs to be done is calculating the target's hash value and directly performing the insertion or deletion at the specified bucket. </p>
+          <p class = "indented">Adding and removing entries in a hash table will also take the same amount of time regardless of the table's size as long as no collisions occur. All that needs to be done is calculating the target's hash value and directly performing the insertion or deletion at the specified bucket. </p>
           <br>
           <hr>
           <h1><b><u>What are the Disadvantages of a Hash Table?</u></b></h1>
           <br>
           <h4>• <b><u>Degradation Due to Collisions</u></b></h4>
           <p class = "indented">As a hash table holds more and more data, the chances of a collision occurring increases. This is because while there could be infinite possibilities for keys, a hash table cannot have infinite buckets due to memory limitations. When collisions do occur, the speeds at which
-          operations such as insertion and deletion are performed become inconsistent. Even an extremely effective hash function cannot prevent collisions if there are simply too many keys that need to be assigned a hash value. Ideally, the size of the data meant to be stored in the table should be known beforehand, so that 
+          operations such as insertion and deletion are performed drop. Even an extremely effective hash function cannot prevent collisions if there are simply too many keys that need to be assigned a hash value. Ideally, the size of the data meant to be stored in the table should be known beforehand, so that 
           an appropriate hash function and table can be created.
           </p>
           <br>
@@ -114,8 +114,8 @@
             <li><u><b>Employee Management System</b></u>:  In pretty much any company, a computer system is used to keep track of every employee's information such as name, position, and salary. When an employee's status within the company changes,
             he or she needs to be quickly located within the system so that their recorded information can be editted. When an employee is newly hired, their information needs to be quickly stored in the system.  A hash table would allow for such functionalities. The information of each employee would be stored as values within the table and their keys would be their ID number. </li>
             <br>
-            <li><u><b>Electronic Dictionary</b></u>: When a user searches a word in a dictionary, they should be able to view its definition instantly no matter what the word was. Because of the sheer number of existing words in the English language, a hash table is 
-            without a doubt the best option for this kind of application. After all, the time it takes to search for an element within a hash table is unaffected by the table's size. Words would be stored as keys while their definitions would be stored as values. </li>
+            <li><u><b>Electronic Dictionary</b></u>: When a user searches a word in a dictionary, they should be able to view its definition instantly no matter what the word was. Because of the sheer number of existing words in the English language, a hash table is, 
+            without a doubt, very suitable for this kind of application. After all, the time it takes to search for an element within a hash table is unaffected by the table's size. Words would be stored as keys while their definitions would be stored as values. </li>
             <br>
           </ul>
           <br>
