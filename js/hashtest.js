@@ -80,7 +80,7 @@ function hashGraph(num){
         /*for(var i = 0; i <= pointsnum; i++)
             times.push(hashAccess(i*10000).toFixed(5));*/
         times = [0.0, 0.0433, 0.0427, 0.049, 0.0341, 0.0361, 0.0364, 0.0366, 0.0363, 0.0363, 0.0357];
-        document.getElementById("hashexp").innerHTML = "Once the hash value has been calculated from a key, accessing the value stored in the corresponding bucket is quick and simple. This function's runtime will not be affected by the amount of entries in the table as we can directly access any bucket provided its hash value.";
+        document.getElementById("hashexp").innerHTML = "Accessing a value within a hash table is a simple task. Once its hash value has been calculated from its key, it can be retrieved directly from the bucket it's stored in. The runtime of hash table access will depend on the complexity of the hash function used. As long as no collisions occur, this function will have constant runtime and be unaffected by the hash table's size.";
         break;
 
         case 2:

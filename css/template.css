@@ -65,6 +65,15 @@ p a{
     background-color: black;
 }
 
+.submitbutton{
+    float:right;
+}
+
+.resulttext{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .dropdown .dropbtn {
     font-size: 16px;
     border: none;
